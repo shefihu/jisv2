@@ -1,0 +1,77 @@
+/* Secondary Table Wrapper */
+.secondary-table-wrapper {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #c8cace;
+}
+
+/* Table Header */
+.secondary-table-header {
+  background-color: white;
+}
+
+.secondary-table-header-grid {
+  display: grid;
+  gap: 0;
+}
+
+.secondary-table-header-cell {
+  padding: 1.25rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+}
+
+.secondary-table-header-cell:last-child {
+  border-right: none;
+}
+
+.secondary-table-header-cell.align-left {
+  text-align: left;
+}
+
+.secondary-table-header-cell.align-right {
+  text-align: right;
+}
+
+/* Table Content */
+.secondary-table-content {
+  background: white;
+}
+
+.secondary-table-row:last-child {
+  border-bottom: none;
+}
+
+.secondary-table-row-grid {
+  display: grid;
+  gap: 0;
+}
+
+.secondary-table-cell {
+  padding: 0.81rem 0.625rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  line-height: 2rem;
+  vertical-align: top;
+  border-top: 1px solid #c8cace;
+}
+
+.secondary-table-cell.cell-align-left {
+  text-align: left;
+}
+
+.secondary-table-cell.cell-align-center {
+  text-align: center;
+}
+
+.secondary-table-cell.cell-align-right {
+  text-align: right;
+}
+
+.secondary-table-cell.cell-align-justify {
+  text-align: justify;
+}

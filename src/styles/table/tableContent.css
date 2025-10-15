@@ -1,0 +1,98 @@
+/* Table Content */
+.table-content {
+  background-color: white;
+  border-left: 1px solid #c8cace;
+  border-right: 1px solid #c8cace;
+  border-bottom: 1px solid #c8cace;
+}
+
+.table-row-grid {
+  display: grid;
+  align-items: center;
+}
+
+/* Table Cells */
+.table-cell {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #282828;
+  text-align: center;
+  border-bottom: 1px solid #c8cace;
+  border-right: 1px solid #c8cace;
+  height: 4.6rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.table-cell-last-row {
+  border-bottom: none;
+}
+
+.table-cell-last-col {
+  border-right: none;
+}
+
+.table-cell-action {
+  color: #3b82f6;
+}
+
+/* Action Buttons */
+.action-button {
+  color: #3b82f6;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0;
+  text-underline-offset: 2px;
+}
+
+.action-button:hover {
+  color: #2563eb;
+}
+
+/* SLA Badges */
+.sla-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  text-wrap: wrap;
+  margin-inline: 1.3rem;
+  min-width: 7rem;
+}
+
+.sla-on-track {
+  background-color: #12d940;
+}
+
+.sla-at-risk {
+  background-color: #eab308;
+}
+
+.sla-overdue {
+  background-color: #ef4444;
+}
+
+.sla-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+  font-size: 0.75rem;
+}
+
+.sla-time {
+  font-size: 0.75rem;
+}
