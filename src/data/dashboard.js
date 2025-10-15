@@ -38,3 +38,15 @@ export const metricsData = [
     type: "urgent",
   },
 ];
+
+export const caseCardData = [
+  { label: "Civil Cases", value: 219, color: "#5CA9FB" },
+  { label: "Criminal Cases", value: 126, color: "#FF4D4F" },
+  { label: "Motion", value: 180, color: "#FFD54F" },
+  { label: "Affidavit", value: 240, color: "#00C853" },
+];
+
+export const caseCardStatusOptions = [
+  { value: "approved", label: "Cases Approved" },
+  { value: "pending", label: "Pending Cases" },
+];

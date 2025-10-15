@@ -1,4 +1,4 @@
-import "../../../styles/dashboard/metricCard.css";
+import "../../../styles/dashboard/home/metricCard.css";
 import PropTypes from "prop-types";
 
 const MetricCard = ({ icon: Icon, title, value, type = "normal" }) => {

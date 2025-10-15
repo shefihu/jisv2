@@ -1,7 +1,6 @@
-import "../../../styles/dashboard/metricsCardContainer.css";
-
 import PropTypes from "prop-types";
 import MetricCard from "./MetricCard";
+import "../../../styles/dashboard/home/metricsCardContainer.css";
 
 const MetricsCardContainer = ({ metrics }) => {
   return (
