@@ -1,0 +1,77 @@
+.multi_select_wrapper {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  position: relative;
+}
+
+.multi_select_wrapper label {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #282828;
+  user-select: none;
+}
+
+.multi_select_input {
+  border: 1px solid #c8cace;
+  border-radius: 8px;
+  padding-block: 6px;
+  padding-left: 14px;
+  padding-right: 46px;
+  position: relative;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.active {
+  border: 1px solid #5ca9fb;
+}
+.multi_select_placeholder {
+  font-size: 0.875rem;
+  line-height: 24px;
+  color: #c8cace;
+  user-select: none;
+  padding: 8px;
+}
+.multi_select_icon {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  color: #292d32;
+  transition: all 0.2s ease-in-out;
+}
+
+.select_option {
+  background: #78767625;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 24px;
+}
+.multi_select_wrapper ul {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  box-shadow: 6px 10px 40px -3px #c8cace69;
+  position: absolute;
+  width: 100%;
+  top: calc(100% + 10px); /* 20px below the wrapper */
+  left: 0;
+}
+.multi_select_wrapper ul li {
+  list-style: none;
+  padding: 12px;
+  cursor: pointer;
+}
+.multi_select_wrapper ul li:hover {
+  background-color: #c8cace43;
+}
+.multi_select_wrapper ul li input[type="checkbox"] {
+  appearance: none;
+  display: none;
+}
+.rotate-icon {
+  transform: rotate(180deg);
+}
