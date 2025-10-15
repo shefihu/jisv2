@@ -1,0 +1,64 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.container .left {
+  height: 100%;
+  background-image: url("../assets/images/auth_bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: 51rem;
+  padding-inline: 2rem;
+  padding-block: 1.56rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.logo_image {
+  max-width: 5.6rem;
+}
+.note_board {
+  background-color: #ffffff1a;
+  border-radius: 1.5rem;
+  padding-inline: 2rem;
+  padding-block: 1.375rem;
+  backdrop-filter: blur(25px);
+  border: 0.5px solid rgba(255, 255, 255, 0.445);
+}
+.note_board ol {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: white;
+  flex-direction: column;
+  display: flex;
+  gap: 0.8rem;
+  padding-inline: 2rem;
+}
+.form_wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  background-image: url("../assets/images/logo_bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  padding-inline: 3rem;
+  padding-top: 7.3rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .container .left {
+    display: none;
+  }
+  .form_wrapper {
+    padding-inline: 2rem;
+    padding-top: 4.3rem;
+    padding-bottom: 4.3rem;
+  }
+}

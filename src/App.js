@@ -1,11 +1,9 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import LoginForm from "./components/auth/LoginForm.jsx";
+import { router } from "./routes/index.js";
 function App() {
-  return (
-    <>
-      <LoginForm />
-    </>
-  );
+  return <RouterProvider router={router} />;
+
 }
 
 export default App;
