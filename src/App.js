@@ -1,7 +1,8 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import CauseAction from "./components/CauseAction.jsx";
+import { router } from "./routes/index.js";
 function App() {
-  return <CauseAction />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
