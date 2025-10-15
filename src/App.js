@@ -3,6 +3,7 @@ import "./App.css";
 import { router } from "./routes/index.js";
 function App() {
   return <RouterProvider router={router} />;
+
 }
 
 export default App;
