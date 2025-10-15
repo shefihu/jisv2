@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import AuthLayout from "../layout/AuthLayout";
 import { RoutePaths } from "./routePaths";
-import TestPage from "../pages/uiTest";
 import Login from "../pages/auth/login.jsx";
+import { AffidavitTemplate } from "../components/AffidavitTemplate.jsx";
 export const router = createBrowserRouter([
   {
     element: <AuthLayout />,
@@ -15,6 +15,6 @@ export const router = createBrowserRouter([
   },
   {
     path: RoutePaths.ROOT,
-    element: <TestPage />,
+    element: <AffidavitTemplate />,
   },
 ]);
