@@ -1,36 +1,49 @@
-import { ChevronDown } from "lucide-react";
-import "../styles/multiSelect.css";
+import { ChevronDown, X, Loader2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import "../styles/multiSelect.css";
 
-function MultiSelect({ options, selected, setSelected, placeholder, label }) {
+function MultiSelect({
+  options,
+  selected,
+  setSelected,
+  placeholder,
+  label,
+  loading,
+  error,
+}) {
   const wrapperRef = useRef(null);
   const iconRef = useRef(null);
   const inputRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Filter out already selected options
+  const availableOptions = options.filter(
+    (option) => !selected.includes(option)
+  );
+
   const handleOptionClick = (option) => {
-    setSelected((prev) => {
-      if (prev.includes(option)) {
-        return prev.filter((item) => item !== option);
-      } else {
-        return [...prev, option];
-      }
-    });
+    setSelected((prev) => [...prev, option]);
+  };
+
+  const handleRemoveOption = (e, optionToRemove) => {
+    e.stopPropagation(); // Prevent opening dropdown when clicking X
+    setSelected((prev) => prev.filter((item) => item !== optionToRemove));
   };
 
   useEffect(() => {
-    if (isOpen) {
+    if (!iconRef.current || !inputRef.current) return;
+
+    if (isOpen && !loading) {
       iconRef.current.classList.add("rotate-icon");
       inputRef.current.classList.add("active");
     } else {
       iconRef.current.classList.remove("rotate-icon");
       inputRef.current.classList.remove("active");
     }
-  }, [isOpen]);
+  }, [isOpen, loading]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Only close if the click happens completely outside the wrapper
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         setIsOpen(false);
       }
@@ -44,7 +57,6 @@ function MultiSelect({ options, selected, setSelected, placeholder, label }) {
   }, [isOpen]);
 
   return (
-    // 👇 move ref here to include input + dropdown
     <div className="multi_select_wrapper" ref={wrapperRef}>
       <label>{label}</label>
 
@@ -52,9 +64,21 @@ function MultiSelect({ options, selected, setSelected, placeholder, label }) {
         ref={inputRef}
         aria-label="multi select input"
         className="multi_select_input"
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={() => !loading && setIsOpen((prev) => !prev)}
+        style={{
+          cursor: loading ? "not-allowed" : "pointer",
+          opacity: loading ? 0.6 : 1,
+        }}
       >
-        {selected.length > 0 ? (
+        {loading ? (
+          <span
+            className="multi_select_placeholder"
+            style={{ display: "flex", alignItems: "center", gap: "8px" }}
+          >
+            <Loader2 size={16} className="animate-spin" />
+            Loading options...
+          </span>
+        ) : selected.length > 0 ? (
           selected.map((option) => (
             <span
               key={option}
@@ -62,29 +86,37 @@ function MultiSelect({ options, selected, setSelected, placeholder, label }) {
               className="select_option"
             >
               {option}
+              <X
+                size={16}
+                className="remove_icon"
+                onClick={(e) => handleRemoveOption(e, option)}
+              />
             </span>
           ))
         ) : (
           <span className="multi_select_placeholder">
-            {placeholder ? placeholder : " Select one or more cause of action"}
+            {placeholder ? placeholder : "Select one or more cause of action"}
           </span>
         )}
 
-        <ChevronDown ref={iconRef} size={24} className="multi_select_icon" />
+        {loading ? (
+          <Loader2 size={24} className="multi_select_icon animate-spin" />
+        ) : (
+          <ChevronDown ref={iconRef} size={24} className="multi_select_icon" />
+        )}
       </div>
 
-      {isOpen && (
+      {isOpen && !loading && (
         <ul className="multi_select_dropdown">
-          {options.map((option) => (
-            <li key={option} onClick={() => handleOptionClick(option)}>
-              <input
-                type="checkbox"
-                checked={selected.includes(option)}
-                readOnly
-              />
-              {option}
-            </li>
-          ))}
+          {availableOptions.length > 0 ? (
+            availableOptions.map((option) => (
+              <li key={option} onClick={() => handleOptionClick(option)}>
+                {option}
+              </li>
+            ))
+          ) : (
+            <li className="no_options">All options selected</li>
+          )}
         </ul>
       )}
     </div>

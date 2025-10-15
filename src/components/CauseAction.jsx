@@ -8,11 +8,14 @@ function CauseAction() {
   const [selected, setSelected] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
   useEffect(() => {
     const fetchCauseActions = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("https://fakestoreapi.com/products");
+        const response = await axios.get(
+          "https://apistaging2.lagosjudiciary.gov.ng/api/filing/caause-of-action-by-cat/1"
+        );
         const options = response.data.map((data) => data.title);
         console.log(options);
 
@@ -34,9 +37,11 @@ function CauseAction() {
       <MultiSelect
         options={causeAction}
         selected={selected}
+        error={error}
         setSelected={setSelected}
         label="Cause of Action"
         placeholder="Select one or more cause of action"
+        loading={loading}
       />
     </div>
   );

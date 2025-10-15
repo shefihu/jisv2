@@ -59,6 +59,8 @@
   width: 100%;
   top: calc(100% + 10px); /* 20px below the wrapper */
   left: 0;
+  max-height: 10rem;
+  overflow: auto;
 }
 .multi_select_wrapper ul li {
   list-style: none;
@@ -74,4 +76,30 @@
 }
 .rotate-icon {
   transform: rotate(180deg);
+}
+
+.remove_icon {
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.select_option {
+  background: #78767625;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.no_options {
+  text-align: center;
+  color: #999;
+  cursor: default !important;
+}
+
+.no_options:hover {
+  background-color: transparent !important;
 }
