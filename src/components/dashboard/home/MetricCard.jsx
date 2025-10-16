@@ -6,7 +6,9 @@ const MetricCard = ({ icon: Icon, title, value, type = "normal" }) => {
 
   return (
     <div className="metric_container ">
-      <div className="icon_container">{Icon}</div>
+      <div className="icon_container">
+        <div>{Icon}</div>
+      </div>
       <p className="metric_title">{title}</p>
       <p className={valueClass}>{value}</p>
     </div>

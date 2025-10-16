@@ -18,7 +18,7 @@ export const metricsData = [
   },
   {
     id: 3,
-    icon: <TickCircleIcon />,
+    icon: <TickCircleIcon size={24} />,
     title: "Cases Approved",
     value: 26,
     type: "normal",
