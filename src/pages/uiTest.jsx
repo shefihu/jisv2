@@ -13,6 +13,7 @@ import {
   caseCardStatusOptions,
   metricsData,
 } from "../data/dashboard";
+import TableContainer from "../common/table/TableContainer";
 
 const mockData = Array.from({ length: 42 }, (_, i) => ({
   id: i + 1,
@@ -238,14 +239,12 @@ const TestPage = () => {
     },
   ];
   return (
-    <div
-      style={{
-        minWidth: "1440px",
-      }}
-    >
-      <TableTitleHeader title="New Cases" />
-      <TableHeader columns={columns} />
-      <TableContent data={data} columns={columns} renderCell={renderCell} />
+    <div>
+      <TableContainer>
+        <TableTitleHeader title="New Cases" />
+        <TableHeader columns={columns} />
+        <TableContent data={data} columns={columns} renderCell={renderCell} />
+      </TableContainer>
       <br />
       <div>
         <TableTitleHeader title="Claim Details" />
@@ -254,9 +253,7 @@ const TestPage = () => {
           columns={secondaryTableColumns}
         />
       </div>
-
       <MetricsCardContainer metrics={metricsData} />
-
       <CaseOverview
         title="Case Overview"
         data={caseCardData}
@@ -265,7 +262,6 @@ const TestPage = () => {
         toggleOptions={caseCardStatusOptions}
         defaultSelected={"approved"}
       />
-
       <div className="case-table">
         <table>
           <thead>

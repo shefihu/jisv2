@@ -4,4 +4,10 @@ export const RoutePaths = {
 
   // AUTH
   LOGIN: "/login",
+
+  // DASHBOARD
+  DASHBOARD: "/dashboard",
+  ACR_CASES: "/dashboard/acr-cases",
+  FIAT: "/dashboard/fiat",
+  HELP: "/dashboard/help",
 };

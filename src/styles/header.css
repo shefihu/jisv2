@@ -1,0 +1,150 @@
+.header {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #c8cace80;
+  position: sticky;
+  top: 0;
+}
+
+.user_name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #282828;
+}
+
+.user_role {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #171d1a80;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.notification_icon,
+.user_avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.notification_icon {
+  background: #f0f2f5;
+}
+
+.user_avatar {
+  position: relative;
+  border: 1.5px solid #ffffff;
+  background: #ffe7cc;
+}
+
+.user_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.status_dot {
+  position: absolute;
+  bottom: 0.125rem;
+  right: 0.125rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: #04802e;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* hamburger */
+.hamburger_btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  width: 1.5rem;
+  height: 1.125rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 0.125rem;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media (max-width: 768px) {
+  .hamburger_btn {
+    display: block;
+  }
+
+  .header {
+    padding: 1rem 0.5rem;
+  }
+
+  .user_info {
+    display: none;
+  }
+
+  .header_right {
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .notification_icon,
+  .user_avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .notification_icon,
+  .user_avatar {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .status_dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    bottom: 0.0625rem;
+    right: 0.0625rem;
+  }
+}
