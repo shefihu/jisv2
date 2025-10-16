@@ -4,6 +4,7 @@ import { RoutePaths } from "./routePaths";
 import Login from "../pages/auth/login.jsx";
 import { AffidavitTemplate } from "../components/AffidavitTemplate.jsx";
 import TestPage from "../pages/uiTest.jsx";
+import DashboardLayout from "../layout/DashboardLayout.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,15 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.LOGIN,
         element: <Login />,
+      },
+    ],
+  },
+  {
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: RoutePaths.DASHBOARD,
+        element: <></>,
       },
     ],
   },
