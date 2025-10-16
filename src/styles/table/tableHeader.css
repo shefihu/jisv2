@@ -1,0 +1,38 @@
+/* Table Header */
+.table-header-wrapper {
+  background-color: #f9fafb;
+  border-left: 1px solid #c8cace;
+  border-right: 1px solid #c8cace;
+}
+
+.table-header-grid {
+  display: grid;
+  align-items: center;
+}
+
+/* Header Cells */
+.table-header-cell {
+  padding: 1rem 0.625rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  border-top: 1px solid #c8cace;
+  border-bottom: 1px solid #c8cace;
+  border-right: 1px solid #c8cace;
+  height: 4.6rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.table-header-cell-last {
+  border-right: none;
+}
+
+.table-header-cell-action {
+  color: #000000;
+}
