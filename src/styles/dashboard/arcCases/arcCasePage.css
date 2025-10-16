@@ -1,0 +1,43 @@
+.container_wrapper {
+  padding-inline: 1.875rem;
+  padding-block: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  max-width: 62.9rem;
+}
+.secondary_table_wrapper {
+  width: 100%;
+  overflow-x: scroll;
+}
+.case_details_wrapper {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+.secondary_table_content {
+  max-width: 62.9rem;
+  min-width: 62.9rem;
+}
+.preview-link {
+  color: #5ca9fb;
+}
+.suit_no_text {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 145%;
+}
+
+@media (max-width: 425px) {
+  .container_wrapper {
+    padding: 1rem;
+  }
+  .suit_no_text {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .suit_no_text {
+    font-size: 1.2rem;
+  }
+}
