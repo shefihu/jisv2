@@ -1,12 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import TableTitleHeader from "../common/table/TableTitleHeader";
 import TableHeader from "../common/table/TableHeader";
 import TableContent from "../common/table/TableContent";
 import { Clock } from "lucide-react";
 import { DangerIcon, TickCircleIcon } from "../assets/Svg";
 import SecondaryTableContent from "../common/table/SecondaryTableContent";
+import TablePagination from "../common/table/TablePagination";
+import CaseOverview from "../components/dashboard/home/CaseOverview";
+import MetricsCardContainer from "../components/dashboard/home/MetricsCardContainer";
+import {
+  caseCardData,
+  caseCardStatusOptions,
+  metricsData,
+} from "../data/dashboard";
+
+const mockData = Array.from({ length: 42 }, (_, i) => ({
+  id: i + 1,
+  name: `Case ${i + 1}`,
+  status: i % 2 === 0 ? "Approved" : "Pending",
+}));
 
 const TestPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [entriesPerPage, setEntriesPerPage] = useState(8);
+
+  const totalEntries = mockData.length;
+
+  const startIndex = (currentPage - 1) * entriesPerPage;
+  const endIndex = startIndex + entriesPerPage;
+  const visibleData = mockData.slice(startIndex, endIndex);
+
+  const handlePageChange = (page) => setCurrentPage(page);
+  const handleEntriesChange = (num) => {
+    setEntriesPerPage(num);
+    setCurrentPage(1);
+  };
+
   const getBackgroundColor = (filingType) => {
     switch (filingType.toLowerCase()) {
       case "criminal":
@@ -223,6 +252,46 @@ const TestPage = () => {
         <SecondaryTableContent
           data={SecondaryTableData}
           columns={secondaryTableColumns}
+        />
+      </div>
+
+      <MetricsCardContainer metrics={metricsData} />
+
+      <CaseOverview
+        title="Case Overview"
+        data={caseCardData}
+        cutout="60%"
+        hoverOffset={15}
+        toggleOptions={caseCardStatusOptions}
+        defaultSelected={"approved"}
+      />
+
+      <div className="case-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Case Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {visibleData.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <TablePagination
+          currentPage={currentPage}
+          totalEntries={totalEntries}
+          entriesPerPage={entriesPerPage}
+          onPageChange={handlePageChange}
+          onEntriesChange={handleEntriesChange}
         />
       </div>
     </div>

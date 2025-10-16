@@ -1,0 +1,22 @@
+.sidebar {
+  width: 272px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border-right: 1px solid #c8cace80;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1.625rem;
+  padding-bottom: 3.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-logo {
+  margin-bottom: 1.5rem;
+  width: 5.625rem;
+  height: 5.625rem;
+}

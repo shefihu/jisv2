@@ -1,0 +1,17 @@
+.metrics_card_container {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 768px) {
+  .metrics_card_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics_card_container {
+    grid-template-columns: 1fr;
+  }
+}
