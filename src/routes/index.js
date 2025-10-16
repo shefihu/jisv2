@@ -34,4 +34,8 @@ export const router = createBrowserRouter([
     path: RoutePaths.TEST,
     element: <TestPage />,
   },
+  {
+    path: RoutePaths.ARC_CASE,
+    element: <ArcCase />,
+  },
 ]);
