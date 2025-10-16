@@ -6,6 +6,7 @@ import { AffidavitTemplate } from "../components/AffidavitTemplate.jsx";
 import TestPage from "../pages/uiTest.jsx";
 import DashboardLayout from "../layout/DashboardLayout.jsx";
 import Home from "../pages/dashboard/home.jsx";
+import ArcCase from "../pages/ArcCase.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.DASHBOARD,
         element: <Home />,
+      },
+      {
+        path: RoutePaths.ACR_CASES,
+        element: <ArcCase />,
       },
     ],
   },

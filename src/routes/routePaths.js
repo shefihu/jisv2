@@ -1,6 +1,7 @@
 export const RoutePaths = {
   ROOT: "/",
   TEST: "/test",
+  ARC_CASE: "/arc-case",
 
   // AUTH
   LOGIN: "/login",

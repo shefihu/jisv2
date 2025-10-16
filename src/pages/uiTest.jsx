@@ -238,6 +238,21 @@ const TestPage = () => {
       claimType: "Monetary",
     },
   ];
+
+  const tabs = [
+    "pending",
+    "Revised Cases",
+    "Approved",
+    "Case Claims",
+    "Comment",
+    "Documents",
+  ];
+  const [activeTab, setActiveTab] = useState("pending");
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState([]);
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+
   return (
     <div>
       <TableContainer>
