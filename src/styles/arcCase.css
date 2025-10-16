@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3.3rem;
 }
 
 .arc-case-search-section {
@@ -30,6 +29,13 @@
 .tab-wrapper {
   margin-bottom: 2rem;
   max-width: 32.3rem;
+}
+
+.download_wrapper {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: end;
+  margin-bottom: 0.5rem;
 }
 .arc-case-table-wrapper {
   width: 100%;
@@ -137,9 +143,19 @@
   .arc-case-header {
     margin-bottom: 2rem;
   }
-
-  .search-date-wrapper {
+}
+@media (max-width: 1024px) {
+  .arc-case-header {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: start;
+    gap: 1rem;
+  }
+  .arc-case-search-section {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+  .tab-wrapper {
+    max-width: none;
   }
 }
