@@ -10,6 +10,8 @@ import DatePicker from "../common/DatePicker";
 import { Clock } from "lucide-react";
 import { DangerIcon, TickCircleIcon } from "../assets/Svg";
 import "../styles/arcCase.css";
+import { useNavigate } from "react-router-dom";
+import { RoutePaths } from "../routes/routePaths";
 
 // Mock data for Arc cases
 const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
@@ -47,7 +49,7 @@ const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
       : "overdue",
 }));
 
-const ArcCase = () => {
+const ArcCases = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(8);
   const [activeTab, setActiveTab] = useState("Pending");
@@ -56,7 +58,7 @@ const ArcCase = () => {
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-
+  const navigate = useNavigate();
   const tabs = ["Pending", "Revised Cases", "Approved"];
   const sortOptions = ["Normal", "Fast Track", "Urgency"];
 
@@ -152,12 +154,6 @@ const ArcCase = () => {
 
     // Render SLA badges
     if (column.key === "sla") {
-      const statusLabels = {
-        "on-track": "On Track",
-        "at-risk": "At Risk",
-        overdue: "Overdue",
-      };
-
       return (
         <div className={`sla-badge sla-${item.slaStatus}`}>
           <div>{getSlaIcon(item.slaStatus)}</div>
@@ -169,12 +165,32 @@ const ArcCase = () => {
     }
 
     // Render action buttons
-    if (column.key === "details" || column.key === "action") {
+    if (column.key === "details") {
       const buttonText = column.key === "details" ? "View" : "Clear";
       return (
         <button
           className="action-button"
-          onClick={() => console.log(`${buttonText} clicked for ${item.id}`)}
+          onClick={() =>
+            navigate(
+              RoutePaths.ACR_CASE.replace(
+                ":suitId",
+                item.suitNumber.replaceAll("/", "_")
+              )
+            )
+          }
+        >
+          {buttonText}
+        </button>
+      );
+    }
+
+    // Render action buttons
+    if (column.key === "action") {
+      const buttonText = column.key === "details" ? "View" : "Clear";
+      return (
+        <button
+          className="action-button"
+          onClick={() => console.log("action button working ")}
         >
           {buttonText}
         </button>
@@ -251,4 +267,4 @@ const ArcCase = () => {
   );
 };
 
-export default ArcCase;
+export default ArcCases;

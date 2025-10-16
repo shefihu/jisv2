@@ -1,0 +1,144 @@
+.arc-case-container {
+  padding: 1.18rem 1.875rem;
+}
+
+.arc-case-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.3rem;
+}
+
+.arc-case-search-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.arc-case-filter-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.search-wrapper {
+  width: 100%;
+}
+.search-date-wrapper {
+  display: flex;
+  gap: 0.625rem;
+}
+.tab-wrapper {
+  margin-bottom: 2rem;
+}
+.arc-case-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.arc-case-table-content {
+  min-width: 1440px;
+}
+
+.suit-number-cell {
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sla-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  min-height: 2rem;
+  min-width: 7rem;
+}
+
+.sla-badge.sla-overdue {
+  background-color: #ff2e3b;
+}
+
+.sla-badge.sla-at-risk {
+  background-color: #fbbf06;
+}
+
+.sla-badge.sla-on-track {
+  background-color: #12d940;
+}
+
+.sla-badge.sla-completed {
+  background-color: #5ca9fb;
+}
+
+.sla-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sla-status {
+  font-weight: 500;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.875rem;
+}
+
+.action-button:hover {
+  color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .arc-case-container {
+    padding: 1rem;
+  }
+  
+  .arc-case-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .arc-case-search-section {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .search-wrapper {
+    width: 100%;
+  }
+  
+  .search-date-wrapper {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 425px) {
+  .arc-case-container {
+    padding: 0.75rem;
+  }
+  
+  .arc-case-header {
+    margin-bottom: 2rem;
+  }
+  
+  .search-date-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

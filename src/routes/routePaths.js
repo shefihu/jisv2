@@ -1,7 +1,6 @@
 export const RoutePaths = {
   ROOT: "/",
   TEST: "/test",
-  ARC_CASE: "/arc-case",
 
   // AUTH
   LOGIN: "/login",
@@ -9,6 +8,7 @@ export const RoutePaths = {
   // DASHBOARD
   DASHBOARD: "/dashboard",
   ACR_CASES: "/dashboard/acr-cases",
+  ACR_CASE: "/dashboard/acr-cases/:suitId",
   FIAT: "/dashboard/fiat",
   HELP: "/dashboard/help",
 };
