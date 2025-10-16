@@ -1,0 +1,171 @@
+.date-picker-container {
+  position: relative;
+  display: inline-block;
+}
+
+.date-picker-button {
+  padding: 0.5rem;
+  border: 1.5px solid #282828;
+  background-color: transparent;
+  border-radius: 2rem;
+  font-size: 0.625rem;
+  font-weight: 400;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  min-width: 6.1rem;
+  text-align: center;
+}
+
+.date-picker-button:hover {
+  background-color: #f5f5f5;
+}
+
+.date-picker-button:focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.date-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 280px;
+  padding: 1rem;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.calendar-nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.calendar-nav-button:hover {
+  background-color: #f1f5f9;
+}
+
+.calendar-month-year {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.calendar-month-year-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.calendar-month-year-button:hover {
+  background-color: #f1f5f9;
+}
+
+.month-year-picker {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 0.5rem;
+}
+
+.month-year-selectors {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.month-selector,
+.year-selector {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  background-color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.month-selector:focus,
+.year-selector:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calendar-day-header {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  background-color: #f8fafc;
+}
+
+.calendar-day {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-day-empty {
+  cursor: default;
+}
+
+.calendar-day-clickable {
+  cursor: pointer;
+}
+
+.calendar-day-clickable:hover {
+  background-color: #e2e8f0;
+}
+
+.calendar-day-selected {
+  background-color: #1e293b;
+  color: white;
+}
+
+.calendar-day-selected:hover {
+  background-color: #334155;
+}
+
+.calendar-day-today {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.calendar-day-today.calendar-day-selected {
+  background-color: #1e293b;
+  color: white;
+}

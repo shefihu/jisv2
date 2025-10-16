@@ -36,3 +36,13 @@
 .table-header-cell-action {
   color: #000000;
 }
+@media (max-width: 425px) {
+  .table-header-cell {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 425px) {
+  .table-header-cell {
+    font-size: 0.875rem;
+  }
+}

@@ -1,7 +1,13 @@
-import React from "react";
+import BackButton from "../../common/BackButton";
 
-function arcCase() {
-  return <div>arcCase</div>;
+function ArcCase() {
+  return (
+    <div className="container_wrapper">
+      <div>
+        <BackButton />
+      </div>
+    </div>
+  );
 }
 
-export default arcCase;
+export default ArcCase;
