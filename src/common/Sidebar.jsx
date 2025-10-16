@@ -1,7 +1,7 @@
 import "../styles/sidebar.css";
 import PropTypes from "prop-types";
 import logo from "../assets/images/logo.webp";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../routes/routePaths";
 import { sidebarRoutes } from "./SidebarItems";
 import { HelpIcon, LogoutIcon } from "../assets/Svg";

@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { RoutePaths } from "../routes/routePaths";
+import "../styles/sidebar.css";
+import PropTypes from "prop-types";
 
 const SidebarLink = ({ to, icon, name, toggleSidebar }) => {
   const location = useLocation();
@@ -28,10 +30,17 @@ const SidebarLink = ({ to, icon, name, toggleSidebar }) => {
         >
           {icon}
         </span>
-        <p className="text-sm font-medium">{name}</p>
+        <p>{name}</p>
       </Link>
     </li>
   );
+};
+
+SidebarLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired,
+  name: PropTypes.string.isRequired,
+  toggleSidebar: PropTypes.func.isRequired,
 };
 
 export default SidebarLink;

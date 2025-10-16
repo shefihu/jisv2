@@ -93,6 +93,7 @@
 
 .text_label {
   font-weight: 500;
+  padding-top: 0.4375rem;
 }
 
 @media (max-width: 768px) {
@@ -114,6 +115,10 @@
   .legend_label {
     font-weight: 500;
     font-size: 0.75rem;
+  }
+
+  .text_label {
+    padding-top: 0.1875rem;
   }
 }
 

@@ -5,6 +5,7 @@ import Login from "../pages/auth/login.jsx";
 import { AffidavitTemplate } from "../components/AffidavitTemplate.jsx";
 import TestPage from "../pages/uiTest.jsx";
 import DashboardLayout from "../layout/DashboardLayout.jsx";
+import Home from "../pages/dashboard/home.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: RoutePaths.DASHBOARD,
-        element: <></>,
+        element: <Home />,
       },
     ],
   },
