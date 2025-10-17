@@ -8,6 +8,7 @@ import DashboardLayout from "../layout/DashboardLayout.jsx";
 import Home from "../pages/dashboard/home.jsx";
 import ArcCases from "../pages/ArcCase.jsx";
 import ArcCase from "../pages/dashboard/arcCase.jsx";
+import Fiat from "../pages/Fiat.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.ACR_CASES,
         element: <ArcCases />,
+      },
+      {
+        path: RoutePaths.FIAT,
+        element: <Fiat />,
       },
     ],
   },
