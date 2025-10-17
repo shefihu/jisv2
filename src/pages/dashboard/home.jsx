@@ -61,7 +61,7 @@ const columns = [
     width: "1.2fr",
     align: "center",
   },
-  { key: "sla", header: "SLA", width: "1.2fr", align: "center" },
+  { key: "sla", header: "SLA", width: "1.5fr", align: "center" },
   {
     key: "details",
     header: "Details",
