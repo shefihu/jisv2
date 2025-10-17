@@ -14,6 +14,10 @@ import {
   metricsData,
 } from "../data/dashboard";
 import TableContainer from "../common/table/TableContainer";
+import PendingCaseClearOption from "../components/modals/PendingCaseClearOption";
+import RevisedCaseClearOption from "../components/modals/RevisedCaseClearOption";
+import ApprovedCaseClearOption from "../components/modals/ApprovedCaseClearOption";
+import CaseSuccessful from "../components/modals/CaseSuccessful";
 
 const mockData = Array.from({ length: 42 }, (_, i) => ({
   id: i + 1,
@@ -305,6 +309,11 @@ const TestPage = () => {
           onEntriesChange={handleEntriesChange}
         />
       </div>
+
+      <PendingCaseClearOption caseId={"REF/487563/2025"} />
+      <RevisedCaseClearOption />
+      <ApprovedCaseClearOption />
+      <CaseSuccessful />
     </div>
   );
 };
