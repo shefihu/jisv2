@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import TableTitleHeader from "../common/table/TableTitleHeader";
-import TableHeader from "../common/table/TableHeader";
-import TableContent from "../common/table/TableContent";
-import TablePagination from "../common/table/TablePagination";
-import Tab from "../common/Tab";
-import SearchBar from "../common/SearchBar";
-import Sort from "../common/Sort";
-import DatePicker from "../common/DatePicker";
-import "../styles/arcCase.css";
-import { MsExcel, MsWord, PdfIcon } from "../assets/Svg";
+import TableTitleHeader from "../../common/table/TableTitleHeader";
+import TableHeader from "../../common/table/TableHeader";
+import TableContent from "../../common/table/TableContent";
+import TablePagination from "../../common/table/TablePagination";
+import Tab from "../../common/Tab";
+import SearchBar from "../../common/SearchBar";
+import Sort from "../../common/Sort";
+import DatePicker from "../../common/DatePicker";
+import "../../styles/dashboard/acrCases/acrCases.css";
+import { MsExcel, MsWord, PdfIcon } from "../../assets/Svg";
 
 // Mock data for PSA cases in Fiat page
 const mockFiatCaseData = Array.from({ length: 12 }, (_, i) => ({

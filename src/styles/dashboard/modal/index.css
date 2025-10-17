@@ -8,7 +8,7 @@
 
 .open_modal_btn:hover {
   cursor: pointer;
-  text-decoration: none;
+  color: #3b62cf98;
 }
 
 .acr_modal_overlay {

@@ -6,9 +6,9 @@ import { AffidavitTemplate } from "../components/AffidavitTemplate.jsx";
 import TestPage from "../pages/uiTest.jsx";
 import DashboardLayout from "../layout/DashboardLayout.jsx";
 import Home from "../pages/dashboard/home.jsx";
-import ArcCases from "../pages/ArcCase.jsx";
-import ArcCase from "../pages/dashboard/arcCase.jsx";
-import Fiat from "../pages/Fiat.jsx";
+import AcrCaseDetails from "../pages/dashboard/acrCases/acrCaseDetails.jsx";
+import AcrCases from "../pages/dashboard/acrCases/acrCases.jsx";
+import Fiat from "../pages/dashboard/fiat.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -29,11 +29,11 @@ export const router = createBrowserRouter([
       },
       {
         path: RoutePaths.ACR_CASE,
-        element: <ArcCase />,
+        element: <AcrCaseDetails />,
       },
       {
         path: RoutePaths.ACR_CASES,
-        element: <ArcCases />,
+        element: <AcrCases />,
       },
       {
         path: RoutePaths.FIAT,

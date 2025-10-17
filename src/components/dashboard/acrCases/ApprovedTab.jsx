@@ -1,13 +1,13 @@
 import { useState } from "react";
-import TableContent from "../../../../common/table/TableContent";
-import TableHeader from "../../../../common/table/TableHeader";
-import TablePagination from "../../../../common/table/TablePagination";
-import TableTitleHeader from "../../../../common/table/TableTitleHeader";
+import TableContent from "../../../common/table/TableContent";
+import TableHeader from "../../../common/table/TableHeader";
+import TablePagination from "../../../common/table/TablePagination";
+import TableTitleHeader from "../../../common/table/TableTitleHeader";
 import { useNavigate } from "react-router-dom";
 import { Clock } from "lucide-react";
-import { DangerIcon, TickCircleIcon } from "../../../../assets/Svg";
-import { RoutePaths } from "../../../../routes/routePaths";
-import ApprovedCaseClearOption from "../../../modals/ApprovedCaseClearOption";
+import { DangerIcon, TickCircleIcon } from "../../../assets/Svg";
+import { RoutePaths } from "../../../routes/routePaths";
+import ApprovedCaseClearOption from "../../modals/ApprovedCaseClearOption";
 
 const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
   id: `ID/3885GCM/2025`,

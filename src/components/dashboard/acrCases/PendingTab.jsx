@@ -1,13 +1,13 @@
 import { useState } from "react";
-import TableContent from "../../../../common/table/TableContent";
-import TableHeader from "../../../../common/table/TableHeader";
-import TablePagination from "../../../../common/table/TablePagination";
-import TableTitleHeader from "../../../../common/table/TableTitleHeader";
+import TableContent from "../../../common/table/TableContent";
+import TableHeader from "../../../common/table/TableHeader";
+import TablePagination from "../../../common/table/TablePagination";
+import TableTitleHeader from "../../../common/table/TableTitleHeader";
 import { useNavigate } from "react-router-dom";
 import { Clock } from "lucide-react";
-import { DangerIcon, TickCircleIcon } from "../../../../assets/Svg";
-import { RoutePaths } from "../../../../routes/routePaths";
-import RevisedCaseClearOption from "../../../modals/RevisedCaseClearOption";
+import { DangerIcon, TickCircleIcon } from "../../../assets/Svg";
+import { RoutePaths } from "../../../routes/routePaths";
+import PendingCaseClearOption from "../../modals/PendingCaseClearOption";
 
 const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
   id: `ID/3885GCM/2025`,
@@ -83,7 +83,7 @@ const columns = [
   },
 ];
 
-const RevisedCasesTab = () => {
+const PendingTab = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(8);
 
@@ -175,10 +175,10 @@ const RevisedCasesTab = () => {
     // Render action buttons
     if (column.key === "action") {
       return (
-        <RevisedCaseClearOption
+        <PendingCaseClearOption
+          caseId={item.suitNumber}
           onAccept={() => console.log("Case accepted")}
           onReject={() => console.log("Case rejected")}
-          onGenerate={() => console.log("Suit number generated")}
         />
       );
     }
@@ -214,4 +214,4 @@ const RevisedCasesTab = () => {
   );
 };
 
-export default RevisedCasesTab;
+export default PendingTab;

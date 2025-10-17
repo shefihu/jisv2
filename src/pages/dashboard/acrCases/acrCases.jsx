@@ -1,15 +1,15 @@
 import { useState } from "react";
-import Tab from "../common/Tab";
-import SearchBar from "../common/SearchBar";
-import Sort from "../common/Sort";
-import DatePicker from "../common/DatePicker";
-import { MsExcel, MsWord, PdfIcon } from "../assets/Svg";
-import "../styles/arcCase.css";
-import PendingTab from "../components/dashboard/home/acrCases/PendingTab";
-import RevisedCasesTab from "../components/dashboard/home/acrCases/RevisedCasesTab";
-import ApprovedTab from "../components/dashboard/home/acrCases/ApprovedTab";
+import Tab from "../../../common/Tab";
+import SearchBar from "../../../common/SearchBar";
+import Sort from "../../../common/Sort";
+import DatePicker from "../../../common/DatePicker";
+import { MsExcel, MsWord, PdfIcon } from "../../../assets/Svg";
+import "../../../styles/dashboard/acrCases/acrCases.css";
+import PendingTab from "../../../components/dashboard/acrCases/PendingTab";
+import RevisedCasesTab from "../../../components/dashboard/acrCases/RevisedCasesTab";
+import ApprovedTab from "../../../components/dashboard/acrCases/ApprovedTab";
 
-const ArcCases = () => {
+const AcrCases = () => {
   const [activeTab, setActiveTab] = useState("Pending");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState([]);
@@ -85,32 +85,9 @@ const ArcCases = () => {
         <Tab activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
       </div>
 
-      {/* Table */}
-      {/* <TableTitleHeader title="PSA Cases" />
-
-      <div className="arc-case-table-wrapper">
-        <div className="arc-case-table-content">
-          <TableHeader columns={columns} />
-          <TableContent
-            data={visibleData}
-            columns={columns}
-            renderCell={renderCell}
-          />
-        </div>
-      </div> */}
-
       {renderContent()}
-
-      {/* Pagination */}
-      {/* <TablePagination
-        currentPage={currentPage}
-        totalEntries={totalEntries}
-        entriesPerPage={entriesPerPage}
-        onPageChange={handlePageChange}
-        onEntriesChange={handleEntriesChange}
-      /> */}
     </div>
   );
 };
 
-export default ArcCases;
+export default AcrCases;
