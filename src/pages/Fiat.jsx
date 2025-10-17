@@ -7,20 +7,11 @@ import Tab from "../common/Tab";
 import SearchBar from "../common/SearchBar";
 import Sort from "../common/Sort";
 import DatePicker from "../common/DatePicker";
-import { Clock } from "lucide-react";
-import {
-  DangerIcon,
-  MsExcel,
-  MsWord,
-  PdfIcon,
-  TickCircleIcon,
-} from "../assets/Svg";
 import "../styles/arcCase.css";
-import { useNavigate } from "react-router-dom";
-import { RoutePaths } from "../routes/routePaths";
+import { MsExcel, MsWord, PdfIcon } from "../assets/Svg";
 
-// Mock data for Arc cases
-const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
+// Mock data for PSA cases in Fiat page
+const mockFiatCaseData = Array.from({ length: 12 }, (_, i) => ({
   id: `ID/3885GCM/2025`,
   suitNumber: `ID/3885GCM/2025`,
   caseTitle: "State of Lagos VS Salman Lukman",
@@ -33,45 +24,25 @@ const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
       : "Filing of information",
   dateFiled: "22 Jun, 2025",
   statusLevel: "PSA Accepted",
-  sla:
-    i % 5 === 0
-      ? "Overdue"
-      : i % 5 === 1
-      ? "At Risk - 24 hours left"
-      : i % 5 === 2
-      ? "On Track - 3 days left"
-      : i % 5 === 3
-      ? "Completed"
-      : "Overdue",
-  slaStatus:
-    i % 5 === 0
-      ? "overdue"
-      : i % 5 === 1
-      ? "at-risk"
-      : i % 5 === 2
-      ? "on-track"
-      : i % 5 === 3
-      ? "completed"
-      : "overdue",
 }));
 
-const ArcCases = () => {
+const Fiat = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [entriesPerPage, setEntriesPerPage] = useState(8);
+  const [entriesPerPage, setEntriesPerPage] = useState(10);
   const [activeTab, setActiveTab] = useState("Pending");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState([]);
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const navigate = useNavigate();
-  const tabs = ["Pending", "Revised Cases", "Approved"];
+
+  const tabs = ["Pending", "Approved"];
   const sortOptions = ["Normal", "Fast Track", "Urgency"];
 
-  const totalEntries = mockArcCaseData.length;
+  const totalEntries = mockFiatCaseData.length;
   const startIndex = (currentPage - 1) * entriesPerPage;
   const endIndex = startIndex + entriesPerPage;
-  const visibleData = mockArcCaseData.slice(startIndex, endIndex);
+  const visibleData = mockFiatCaseData.slice(startIndex, endIndex);
 
   const handlePageChange = (page) => setCurrentPage(page);
   const handleEntriesChange = (num) => {
@@ -102,14 +73,6 @@ const ArcCases = () => {
       width: "1.2fr",
       align: "center",
     },
-    { key: "sla", header: "SLA", width: "1.5fr", align: "center" },
-    {
-      key: "details",
-      header: "Details",
-      width: "0.8fr",
-      align: "center",
-      isAction: true,
-    },
     {
       key: "action",
       header: "Action",
@@ -118,6 +81,7 @@ const ArcCases = () => {
       isAction: true,
     },
   ];
+
   const getBackgroundColor = (filingType) => {
     switch (filingType.toLowerCase()) {
       case "criminal":
@@ -126,19 +90,6 @@ const ArcCases = () => {
         return "#5CA9FB";
       default:
         return "#ffffff";
-    }
-  };
-
-  const getSlaIcon = (slaStatus) => {
-    switch (slaStatus.toLowerCase()) {
-      case "overdue":
-        return <Clock size={16} />;
-      case "at-risk":
-        return <DangerIcon />;
-      case "on-track":
-        return <TickCircleIcon />;
-      default:
-        return null;
     }
   };
 
@@ -158,47 +109,14 @@ const ArcCases = () => {
       );
     }
 
-    // Render SLA badges
-    if (column.key === "sla") {
-      return (
-        <div className={`sla-badge sla-${item.slaStatus}`}>
-          <div>{getSlaIcon(item.slaStatus)}</div>
-          <div className="sla-content">
-            <span className="sla-status">{item.sla}</span>
-          </div>
-        </div>
-      );
-    }
-
-    // Render action buttons
-    if (column.key === "details") {
-      const buttonText = column.key === "details" ? "View" : "Clear";
-      return (
-        <button
-          className="action-button"
-          onClick={() =>
-            navigate(
-              RoutePaths.ACR_CASE.replace(
-                ":suitId",
-                item.suitNumber.replaceAll("/", "_")
-              )
-            )
-          }
-        >
-          {buttonText}
-        </button>
-      );
-    }
-
     // Render action buttons
     if (column.key === "action") {
-      const buttonText = column.key === "details" ? "View" : "Clear";
       return (
         <button
           className="action-button"
-          onClick={() => console.log("action button working ")}
+          onClick={() => console.log("View clicked for", item.suitNumber)}
         >
-          {buttonText}
+          View
         </button>
       );
     }
@@ -286,4 +204,4 @@ const ArcCases = () => {
   );
 };
 
-export default ArcCases;
+export default Fiat;
