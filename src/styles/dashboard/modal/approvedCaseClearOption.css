@@ -1,0 +1,15 @@
+.approved_case_modal_container {
+  max-width: 50.563rem;
+  width: 100%;
+}
+
+.approved_case_modal_content {
+  max-width: 38.063rem;
+  width: 100%;
+}
+
+.approved_case_modal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

@@ -1,17 +1,15 @@
-import "../../styles/dashboard/arcCases/arcCasePage.css";
-import BackButton from "../../common/BackButton";
-import Tab from "../../common/Tab";
+import "../../../styles/dashboard/acrCases/acrCaseDetails.css";
+import BackButton from "../../../common/BackButton";
+import Tab from "../../../common/Tab";
 import { useState } from "react";
-import TableTitleHeader from "../../common/table/TableTitleHeader";
-import SecondaryTableContent from "../../common/table/SecondaryTableContent";
-import CaseDetailTab from "../../components/dashboard/home/caseDetails/CaseDetailTab";
-import CaseClaimTab from "../../components/dashboard/home/caseDetails/CaseClaimTab";
-import CommentTab from "../../components/dashboard/home/caseDetails/CommentTab";
-import DocumentTab from "../../components/dashboard/home/caseDetails/DocumentTab";
-import PartiesTab from "../../components/dashboard/home/caseDetails/PartiesTab";
-import PaymentTab from "../../components/dashboard/home/caseDetails/PaymentTab";
+import CaseDetailTab from "../../../components/dashboard/acrCases/caseDetails/CaseDetailTab";
+import CaseClaimTab from "../../../components/dashboard/acrCases/caseDetails/CaseClaimTab";
+import CommentTab from "../../../components/dashboard/acrCases/caseDetails/CommentTab";
+import DocumentTab from "../../../components/dashboard/acrCases/caseDetails/DocumentTab";
+import PartiesTab from "../../../components/dashboard/acrCases/caseDetails/PartiesTab";
+import PaymentTab from "../../../components/dashboard/acrCases/caseDetails/PaymentTab";
 
-function ArcCase() {
+function AcrCaseDetails() {
   const [activeTab, setActiveTab] = useState("case Details");
   const tabs = [
     "Case Details",
@@ -59,4 +57,4 @@ function ArcCase() {
   );
 }
 
-export default ArcCase;
+export default AcrCaseDetails;

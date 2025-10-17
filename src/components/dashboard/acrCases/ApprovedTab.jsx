@@ -1,25 +1,14 @@
-import React, { useState } from "react";
-import TableTitleHeader from "../common/table/TableTitleHeader";
-import TableHeader from "../common/table/TableHeader";
-import TableContent from "../common/table/TableContent";
-import TablePagination from "../common/table/TablePagination";
-import Tab from "../common/Tab";
-import SearchBar from "../common/SearchBar";
-import Sort from "../common/Sort";
-import DatePicker from "../common/DatePicker";
-import { Clock } from "lucide-react";
-import {
-  DangerIcon,
-  MsExcel,
-  MsWord,
-  PdfIcon,
-  TickCircleIcon,
-} from "../assets/Svg";
-import "../styles/arcCase.css";
+import { useState } from "react";
+import TableContent from "../../../common/table/TableContent";
+import TableHeader from "../../../common/table/TableHeader";
+import TablePagination from "../../../common/table/TablePagination";
+import TableTitleHeader from "../../../common/table/TableTitleHeader";
 import { useNavigate } from "react-router-dom";
-import { RoutePaths } from "../routes/routePaths";
+import { Clock } from "lucide-react";
+import { DangerIcon, TickCircleIcon } from "../../../assets/Svg";
+import { RoutePaths } from "../../../routes/routePaths";
+import ApprovedCaseClearOption from "../../modals/ApprovedCaseClearOption";
 
-// Mock data for Arc cases
 const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
   id: `ID/3885GCM/2025`,
   suitNumber: `ID/3885GCM/2025`,
@@ -55,18 +44,50 @@ const mockArcCaseData = Array.from({ length: 12 }, (_, i) => ({
       : "overdue",
 }));
 
-const ArcCases = () => {
+const columns = [
+  {
+    key: "suitNumber",
+    header: "Suit Number",
+    width: "1.5fr",
+    align: "center",
+  },
+  { key: "caseTitle", header: "Case Title", width: "2.5fr", align: "center" },
+  { key: "filingType", header: "Filing Type", width: "1fr", align: "center" },
+  {
+    key: "classification",
+    header: "Classification",
+    width: "1.5fr",
+    align: "center",
+  },
+  { key: "dateFiled", header: "Date Filed", width: "1fr", align: "center" },
+  {
+    key: "statusLevel",
+    header: "Status Level",
+    width: "1.2fr",
+    align: "center",
+  },
+  { key: "sla", header: "SLA", width: "1.5fr", align: "center" },
+  {
+    key: "details",
+    header: "Details",
+    width: "0.8fr",
+    align: "center",
+    isAction: true,
+  },
+  {
+    key: "action",
+    header: "Action",
+    width: "0.8fr",
+    align: "center",
+    isAction: true,
+  },
+];
+
+const ApprovedTab = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(8);
-  const [activeTab, setActiveTab] = useState("Pending");
-  const [search, setSearch] = useState("");
-  const [sort, setSort] = useState([]);
-  const [isSortOpen, setIsSortOpen] = useState(false);
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+
   const navigate = useNavigate();
-  const tabs = ["Pending", "Revised Cases", "Approved"];
-  const sortOptions = ["Normal", "Fast Track", "Urgency"];
 
   const totalEntries = mockArcCaseData.length;
   const startIndex = (currentPage - 1) * entriesPerPage;
@@ -79,45 +100,6 @@ const ArcCases = () => {
     setCurrentPage(1);
   };
 
-  // Table columns configuration
-  const columns = [
-    {
-      key: "suitNumber",
-      header: "Suit Number",
-      width: "1.5fr",
-      align: "center",
-    },
-    { key: "caseTitle", header: "Case Title", width: "2.5fr", align: "center" },
-    { key: "filingType", header: "Filing Type", width: "1fr", align: "center" },
-    {
-      key: "classification",
-      header: "Classification",
-      width: "1.5fr",
-      align: "center",
-    },
-    { key: "dateFiled", header: "Date Filed", width: "1fr", align: "center" },
-    {
-      key: "statusLevel",
-      header: "Status Level",
-      width: "1.2fr",
-      align: "center",
-    },
-    { key: "sla", header: "SLA", width: "1.5fr", align: "center" },
-    {
-      key: "details",
-      header: "Details",
-      width: "0.8fr",
-      align: "center",
-      isAction: true,
-    },
-    {
-      key: "action",
-      header: "Action",
-      width: "0.8fr",
-      align: "center",
-      isAction: true,
-    },
-  ];
   const getBackgroundColor = (filingType) => {
     switch (filingType.toLowerCase()) {
       case "criminal":
@@ -192,74 +174,19 @@ const ArcCases = () => {
 
     // Render action buttons
     if (column.key === "action") {
-      const buttonText = column.key === "details" ? "View" : "Clear";
       return (
-        <button
-          className="action-button"
-          onClick={() => console.log("action button working ")}
-        >
-          {buttonText}
-        </button>
+        <ApprovedCaseClearOption
+          onAccept={() => console.log("Case accepted")}
+          onReject={() => console.log("Case rejected")}
+          onSave={() => console.log("Case saved")}
+        />
       );
     }
-
     // Default rendering
     return item[column.key] || "-";
   };
-
   return (
-    <div className="arc-case-container">
-      {/* Header */}
-      <div className="arc-case-header">
-        <div className="arc-case-search-section">
-          <div className="search-wrapper">
-            <SearchBar
-              searchValue={search}
-              setSearchValue={setSearch}
-              placeholder="Search with Suit number"
-            />
-          </div>
-          <div className="search-date-wrapper">
-            <DatePicker
-              selectedDate={startDate}
-              onDateChange={setStartDate}
-              placeholder="28-09-2925"
-            />
-            <DatePicker
-              selectedDate={endDate}
-              onDateChange={setEndDate}
-              placeholder="28-09-2925"
-            />
-          </div>
-        </div>
-
-        <div className="download_sort_wrapper">
-          <Sort
-            sort={sort}
-            setSort={setSort}
-            open={isSortOpen}
-            setOpen={setIsSortOpen}
-            options={sortOptions}
-          />
-        </div>
-      </div>
-      <div className="download_wrapper">
-        <a href="">
-          <MsExcel />
-        </a>
-        <a href="">
-          <MsWord />
-        </a>
-        <a download={""} href="">
-          <PdfIcon />
-        </a>
-      </div>
-
-      {/* Tabs */}
-      <div className="tab-wrapper">
-        <Tab activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
-      </div>
-
+    <>
       {/* Table */}
       <TableTitleHeader title="PSA Cases" />
 
@@ -282,8 +209,8 @@ const ArcCases = () => {
         onPageChange={handlePageChange}
         onEntriesChange={handleEntriesChange}
       />
-    </div>
+    </>
   );
 };
 
-export default ArcCases;
+export default ApprovedTab;

@@ -1,5 +1,4 @@
-import React from "react";
-import "../../../../styles/dashboard/caseDetails/caseDetailsCard.css";
+import "../../../../styles/dashboard/acrCases/caseDetailsCard.css";
 
 function CaseDetailsCard() {
   const caseData = {

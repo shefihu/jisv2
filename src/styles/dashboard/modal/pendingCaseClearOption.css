@@ -1,0 +1,8 @@
+.pending_modal_text {
+  text-align: center;
+}
+
+.pending_modal_container {
+  max-width: 30rem;
+  width: 100%;
+}
