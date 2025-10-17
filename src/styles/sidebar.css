@@ -92,8 +92,13 @@
 
   color: #171d1a80;
 }
-.sidebar_link_icon.active {
-  color: #ffffff;
+.sidebar_link_icon.active,
+.sidebar_link:hover .sidebar_link_icon {
+  color: #f6f7f7;
+}
+
+.sidebar_link_icon.active svg path {
+  fill-opacity: 1;
 }
 
 .sidebar_overlay {

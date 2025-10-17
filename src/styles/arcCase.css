@@ -40,6 +40,7 @@
 .arc-case-table-wrapper {
   width: 100%;
   overflow-x: auto;
+  margin-bottom: 1.5rem;
 }
 
 .arc-case-table-content {
@@ -97,10 +98,10 @@
 .action-button {
   background: none;
   border: none;
-  color: #3b82f6;
+  color: #5ca9fb;
   cursor: pointer;
   text-decoration: underline;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .action-button:hover {
@@ -132,6 +133,10 @@
   .search-date-wrapper {
     width: 100%;
     flex-wrap: wrap;
+  }
+
+  .arc-case-table-wrapper {
+    margin-bottom: 0.2rem;
   }
 }
 
