@@ -3,30 +3,33 @@ import TableTitleHeader from "../../../../common/table/TableTitleHeader";
 import TableHeader from "../../../../common/table/TableHeader";
 import TableContent from "../../../../common/table/TableContent";
 import TablePagination from "../../../../common/table/TablePagination";
-import Tab from "../../../../common/Tab";
 import SearchBar from "../../../../common/SearchBar";
 import Sort from "../../../../common/Sort";
 import DatePicker from "../../../../common/DatePicker";
 import "../../../../styles/dashboard/acrCases/acrCases.css";
 import { MsExcel, MsWord, PdfIcon } from "../../../../assets/Svg";
+import { useNavigate } from "react-router-dom";
+import { RoutePaths } from "../../../../routes/routePaths";
+import UpdateCaseStatusModal from "../../../../components/modals/UpdateCaseStatusModal";
 
-// Mock data for PSA cases in Fiat page
-const mockFiatCaseData = Array.from({ length: 12 }, (_, i) => ({
+// Mock data for My Cases page
+const myCasesData = Array.from({ length: 12 }, (_, i) => ({
   id: `ID/3885GCM/2025`,
   suitNumber: `ID/3885GCM/2025`,
   caseTitle: "State of Lagos VS Salman Lukman",
-  filingType: i % 3 === 0 ? "Civil" : "Criminal",
+  filingType: i === 0 ? "Civil" : i === 1 ? "Civil" : "Criminal",
   classification:
-    i % 4 === 0
+    i === 0
       ? "General Civil"
-      : i % 4 === 1
+      : i === 1
       ? "Family & Probate"
       : "Filing of information",
-  dateFiled: "22 Jun, 2025",
-  statusLevel: "PSA Accepted",
+  origin: "New Filed",
+  status: i === 0 ? "Trial" : "",
+  dateAssigned: "12 Sept, 2025",
 }));
 
-const Fiat = () => {
+const MyCases = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(10);
   const [activeTab, setActiveTab] = useState("Pending");
@@ -35,14 +38,14 @@ const Fiat = () => {
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-
+  const navigate = useNavigate();
   const tabs = ["Pending", "Approved"];
   const sortOptions = ["Ascending", "Descending"];
 
-  const totalEntries = mockFiatCaseData.length;
+  const totalEntries = myCasesData.length;
   const startIndex = (currentPage - 1) * entriesPerPage;
   const endIndex = startIndex + entriesPerPage;
-  const visibleData = mockFiatCaseData.slice(startIndex, endIndex);
+  const visibleData = myCasesData.slice(startIndex, endIndex);
 
   const handlePageChange = (page) => setCurrentPage(page);
   const handleEntriesChange = (num) => {
@@ -55,27 +58,35 @@ const Fiat = () => {
     {
       key: "suitNumber",
       header: "Suit Number",
-      width: "1.5fr",
+      width: "1.2fr",
       align: "center",
     },
-    { key: "caseTitle", header: "Case Title", width: "2.5fr", align: "center" },
+    { key: "caseTitle", header: "Case Title", width: "2fr", align: "center" },
     { key: "filingType", header: "Filing Type", width: "1fr", align: "center" },
     {
       key: "classification",
       header: "Classification",
-      width: "1.5fr",
+      width: "1.2fr",
       align: "center",
     },
-    { key: "dateFiled", header: "Date Filed", width: "1fr", align: "center" },
+    { key: "origin", header: "Origin", width: "1fr", align: "center" },
+    { key: "status", header: "Status", width: "1fr", align: "center" },
     {
-      key: "statusLevel",
-      header: "Status Level",
+      key: "dateAssigned",
+      header: "Date Assigned",
       width: "1.2fr",
       align: "center",
     },
     {
-      key: "action",
-      header: "Action",
+      key: "details",
+      header: "Details",
+      width: "0.8fr",
+      align: "center",
+      isAction: true,
+    },
+    {
+      key: "update",
+      header: "Update",
       width: "0.8fr",
       align: "center",
       isAction: true,
@@ -109,16 +120,28 @@ const Fiat = () => {
       );
     }
 
-    // Render action buttons
-    if (column.key === "action") {
+    // Render details button
+    if (column.key === "details") {
       return (
         <button
-          className="action-button"
-          onClick={() => console.log("View clicked for", item.suitNumber)}
+          className="action-button view-button"
+          onClick={() =>
+            navigate(
+              RoutePaths.MY_CASE.replace(
+                ":suitId",
+                item.suitNumber.replaceAll("/", "_")
+              )
+            )
+          }
         >
           View
         </button>
       );
+    }
+
+    // Render update button
+    if (column.key === "update") {
+      return <UpdateCaseStatusModal />;
     }
 
     // Default rendering
@@ -173,13 +196,8 @@ const Fiat = () => {
         </a>
       </div>
 
-      {/* Tabs */}
-      <div className="tab-wrapper">
-        <Tab activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
-      </div>
-
       {/* Table */}
-      <TableTitleHeader title="PSA Cases" />
+      <TableTitleHeader title="My Cases" />
 
       <div className="arc-case-table-wrapper">
         <div className="arc-case-table-content">
@@ -204,4 +222,4 @@ const Fiat = () => {
   );
 };
 
-export default Fiat;
+export default MyCases;

@@ -1,0 +1,28 @@
+.update_case_modal_content,
+.update_modal_success {
+  width: 47.5rem;
+  max-width: 47.5rem;
+}
+.button_wrapper {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .button_wrapper {
+    flex-direction: column;
+  }
+  .update_case_modal_content,
+  .update_modal_success {
+    width: 100%;
+    max-width: none;
+  }
+}
+@media (max-width: 1024px) {
+  .update_case_modal_content,
+  .update_modal_success {
+    width: 32rem;
+    max-width: 32rem;
+  }
+}

@@ -15,6 +15,7 @@
   justify-content: center;
   position: relative;
   font-size: 0.626rem;
+  width: fit-content;
 }
 
 .sort_button span {
@@ -26,8 +27,6 @@
   transform: rotate(180deg);
 }
 .sort_icon {
-  position: absolute;
-  right: 0.5rem;
   transition: all 0.9 ease-in-out;
 }
 

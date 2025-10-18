@@ -3,13 +3,13 @@ import "../styles/sort.css";
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 
-function Sort({ 
-  placeHolder = "Sort", 
-  sort, 
-  setSort, 
-  options = ["Name", "Date of day year", "Price", "Rating"],
+function Sort({
+  placeHolder = "Sort",
+  sort,
+  setSort,
+  options = ["Ascending", "Descending"],
   open,
-  setOpen
+  setOpen,
 }) {
   const dropdownRef = useRef(null);
 
@@ -21,20 +21,21 @@ function Sort({
     };
 
     if (open) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [open, setOpen]);
 
   const handleSelect = (option) => {
-    if (sort.includes(option)) {
-      setSort(sort.filter((item) => item !== option));
-    } else {
-      setSort([...sort, option]);
-    }
+    setSort(option);
+    setOpen(false);
+  };
+
+  const getDisplayText = () => {
+    return sort || placeHolder;
   };
 
   return (
@@ -45,7 +46,7 @@ function Sort({
           onClick={() => setOpen((prev) => !prev)}
           className="sort_button"
         >
-          <span>{placeHolder}</span>
+          <span>{getDisplayText()}</span>
 
           <ChevronDown
             className={`sort_icon ${open ? "active" : ""}`}
@@ -59,14 +60,15 @@ function Sort({
                 key={option}
                 onClick={() => handleSelect(option)}
                 className={`sort_option ${
-                  sort.includes(option) ? " sort_option_selected" : ""
+                  sort === option ? " sort_option_selected" : ""
                 }`}
               >
                 <input
-                  type="checkbox"
-                  checked={sort.includes(option)}
+                  type="radio"
+                  checked={sort === option}
                   readOnly
                   className="sort_checkbox"
+                  name="sort_option"
                 />
                 {option}
               </li>
@@ -74,20 +76,13 @@ function Sort({
           </ul>
         )}
       </div>
-      <div className="sort_selected_list">
-        {sort.map((selected) => (
-          <span key={selected} className="sort_selected_item">
-            {selected}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }
 
 Sort.propTypes = {
   placeHolder: PropTypes.string,
-  sort: PropTypes.array.isRequired,
+  sort: PropTypes.string,
   setSort: PropTypes.func.isRequired,
   options: PropTypes.array,
   open: PropTypes.bool.isRequired,

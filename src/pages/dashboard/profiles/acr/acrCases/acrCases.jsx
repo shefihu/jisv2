@@ -12,12 +12,12 @@ import ApprovedTab from "../../../../../components/dashboard/acrCases/ApprovedTa
 const AcrCases = () => {
   const [activeTab, setActiveTab] = useState("Pending");
   const [search, setSearch] = useState("");
-  const [sort, setSort] = useState([]);
+  const [sort, setSort] = useState("");
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const tabs = ["Pending", "Revised Cases", "Approved"];
-  const sortOptions = ["Normal", "Fast Track", "Urgency"];
+  const sortOptions = ["Ascending", "Descending"];
 
   const renderContent = () => {
     switch (activeTab.toLowerCase()) {
