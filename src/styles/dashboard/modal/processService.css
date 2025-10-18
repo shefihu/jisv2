@@ -1,0 +1,94 @@
+.process_service_modal_container {
+  max-width: 69.313rem;
+  width: 100%;
+}
+.process_service_modal_content {
+  max-width: 51.313rem;
+  width: 100%;
+}
+
+.process_service_table {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.process_service_table table {
+  width: 100%;
+  border-collapse: collapse;
+
+  text-align: center;
+  color: #282828;
+  font-size: 0.875rem;
+}
+
+.process_service_table th {
+  padding: 0.75rem;
+
+  border: 1px solid #5ca9fb;
+  font-weight: 600;
+}
+
+.process_service_table th,
+.process_service_table td {
+  padding-top: 1rem;
+  padding-right: 0.625rem;
+  padding-bottom: 1rem;
+  padding-left: 0.625rem;
+}
+
+.process_service_table td {
+  border: 1px solid #000;
+}
+
+.process_service_notice_cell {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  color: #5ca9fb;
+}
+
+.process_service_notice_cell:hover {
+  color: #5ca9fb6f;
+}
+
+.process_service_modal_footer {
+  max-width: 37.688rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .process_service_modal_container {
+    max-width: 100%;
+  }
+
+  .process_service_modal_content {
+    max-width: 100%;
+  }
+
+  .process_service_modal_footer {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .process_service_table table {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .process_service_modal_footer {
+    gap: 0.5rem;
+  }
+
+  .process_service_table th,
+  .process_service_table td {
+    padding-top: 0.75rem;
+    padding-right: 0.375rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.375rem;
+  }
+}
