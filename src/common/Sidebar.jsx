@@ -11,13 +11,10 @@ import { useState } from "react";
 
 const Sidebar = ({ isOpen, toggleSidebar, profile }) => {
   const navigate = useNavigate();
-  const [openDropdowns, setOpenDropdowns] = useState({});
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (routeName) => {
-    setOpenDropdowns((prev) => ({
-      ...prev,
-      [routeName]: !prev[routeName],
-    }));
+    setOpenDropdown(openDropdown === routeName ? null : routeName);
   };
   //TODO: fix the sub route to fit the many route
   const getDropdownOptions = (routeName) => {
@@ -71,7 +68,7 @@ const Sidebar = ({ isOpen, toggleSidebar, profile }) => {
               />
             ))}
             {judgesSidebarRoutes.slice(6).map((route, index) => {
-              const isDropdownOpen = openDropdowns[route.name];
+              const isDropdownOpen = openDropdown === route.name;
               const dropdownOptions = getDropdownOptions(route.name);
 
               return (

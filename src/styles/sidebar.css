@@ -108,8 +108,8 @@
 
 .sidebar_dropdown_content ul {
   list-style: none;
-  padding: 0.5rem 0;
   margin: 0;
+  width: 100%;
 }
 
 .sidebar_dropdown_content li {
@@ -128,17 +128,11 @@
   height: 2rem;
   font-size: 0.8125rem;
   padding-left: 2rem;
-  margin-left: 0.5rem;
   background-color: transparent;
-}
-
-.sidebar_link.sub_item:hover {
-  background-color: #e3f2fd;
-  color: #1976d2;
+  width: 100%;
 }
 
 .sidebar_link.sub_item.active {
-  background-color: #bbdefb;
   color: #0d47a1;
 }
 
