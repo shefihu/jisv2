@@ -12,6 +12,8 @@ import Fiat from "../pages/dashboard/profiles/acr/fiat.jsx";
 import JudgesCalendar from "../pages/dashboard/profiles/judges/judgesCalendar.jsx";
 import MyCases from "../pages/dashboard/profiles/judges/myCases.jsx";
 import MyCaseDetails from "../pages/dashboard/profiles/judges/myCaseDetails.jsx";
+import ScheduleCmc from "../pages/dashboard/profiles/judges/scheduleCmc.jsx";
+import ScheduleTrial from "../pages/dashboard/profiles/judges/scheduleTrial.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +55,14 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.MY_CASE,
         element: <MyCaseDetails />,
+      },
+      {
+        path: RoutePaths.SCHEDULE_TRIAL,
+        element: <ScheduleTrial />,
+      },
+      {
+        path: RoutePaths.SCHEDULE_CMC,
+        element: <ScheduleCmc />,
       },
     ],
   },

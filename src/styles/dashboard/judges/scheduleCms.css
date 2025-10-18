@@ -1,0 +1,13 @@
+.schedule-btn {
+  color: #5ca9fb;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.schedule-btn:hover {
+  opacity: 0.9;
+}
+.location_zoom {
+  color: #5ca9fb;
+}

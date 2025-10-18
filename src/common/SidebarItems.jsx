@@ -38,10 +38,9 @@ export const sidebarRoutesByRole = {
       icon: <ACRIcon />,
       hasDropdown: true,
       dropdownOptions: [
-        { name: "Active Cases", path: RoutePaths.FIAT },
-        { name: "Pending Cases", path: RoutePaths.FIAT },
-        { name: "Completed Cases", path: RoutePaths.FIAT },
-        { name: "Case Analytics", path: RoutePaths.FIAT },
+        { name: "Schedule Trial", path: RoutePaths.SCHEDULE_TRIAL },
+        { name: "Schedule CMC", path: RoutePaths.SCHEDULE_CMC },
+        { name: "Case Deposition", path: RoutePaths.FIAT },
       ],
     },
     {

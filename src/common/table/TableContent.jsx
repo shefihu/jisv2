@@ -42,7 +42,7 @@ const TableContent = ({ data, columns, renderCell }) => {
                 }}
               >
                 {renderCell
-                  ? renderCell(item, column)
+                  ? renderCell(item, column, rowIndex)
                   : defaultRenderCell(item, column)}
               </div>
             ))}
