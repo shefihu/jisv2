@@ -132,6 +132,25 @@
   width: 100%;
 }
 
+.drop_down_link {
+  text-decoration: none;
+  color: #737373;
+  padding-left: 3rem;
+  padding-right: 0.75rem;
+  padding-block: 0.5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  color: #737373;
+  font-size: 0.75rem;
+  background-color: white;
+}
+
+.drop_down_link.active {
+  background-color: #5ca9fb2e;
+}
+
 .sidebar_link.sub_item.active {
   color: #0d47a1;
 }

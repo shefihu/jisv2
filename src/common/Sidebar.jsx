@@ -1,7 +1,7 @@
 import "../styles/sidebar.css";
 import PropTypes from "prop-types";
 import logo from "../assets/images/logo.webp";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RoutePaths } from "../routes/routePaths";
 import { sidebarRoutesByRole } from "./SidebarItems";
 import { HelpIcon, LogoutIcon } from "../assets/Svg";
@@ -12,6 +12,7 @@ import { CURRENT_USER_ROLE } from "../config/roleConfig";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (routeName) => {
@@ -94,16 +95,27 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                         }`}
                       >
                         <ul>
-                          {route.dropdownOptions.map((option, optIndex) => (
-                            <li key={optIndex}>
-                              <SidebarLink
-                                name={option.name}
-                                to={option.path}
-                                toggleSidebar={toggleSidebar}
-                                isSubItem={true}
-                              />
-                            </li>
-                          ))}
+                          {route.dropdownOptions.map((option, optIndex) => {
+                            const active = location.pathname.startsWith(
+                              option.path
+                            );
+                            return (
+                              <li key={optIndex}>
+                                <Link
+                                  style={{
+                                    textDecoration: "none",
+                                  }}
+                                  to={option.path}
+                                  onClick={toggleSidebar}
+                                  className={`drop_down_link ${
+                                    active ? "active" : ""
+                                  }`}
+                                >
+                                  <p className="">{option.name}</p>
+                                </Link>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                     </li>

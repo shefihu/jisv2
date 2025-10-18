@@ -11,6 +11,9 @@ const SidebarLink = ({ to, icon, name, toggleSidebar, isSubItem = false }) => {
       return location.pathname === RoutePaths.DASHBOARD;
     }
 
+    if (to.includes("case-management")) {
+      return location.pathname === RoutePaths.CASE_MANAGEMENT;
+    }
     // For other routes, check if current path starts with the route path
     // This will make the sidebar item active for nested routes
     return location.pathname.startsWith(to);
@@ -21,7 +24,9 @@ const SidebarLink = ({ to, icon, name, toggleSidebar, isSubItem = false }) => {
       <Link
         to={to}
         onClick={toggleSidebar}
-        className={`sidebar_link ${isActive ? "active" : ""} ${isSubItem ? "sub_item" : ""}`}
+        className={`sidebar_link ${isActive ? "active" : ""} ${
+          isSubItem ? "sub_item" : ""
+        }`}
       >
         {icon && (
           <span
