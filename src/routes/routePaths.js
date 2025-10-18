@@ -18,6 +18,8 @@ export const RoutePaths = {
   HEARING_NOTICE: "/dashboard/hearing-notice",
   POST_JUDGEMENT: "/dashboard/post-judgement",
   CASE_MANAGEMENT: "/dashboard/case-management",
+  SCHEDULE_TRIAL: "/dashboard/case-management/schedule-trial",
+  SCHEDULE_CMC: "/dashboard/case-management/schedule-cmc",
   ADR_CASES: "/dashboard/adr-cases",
   NJC_REPORT: "/dashboard/njc-report",
 
