@@ -4,6 +4,7 @@ import {
   caseCardData,
   caseCardStatusOptions,
   metricsData,
+  judgesMetricData,
 } from "../../data/dashboard";
 import CaseOverview from "../../components/dashboard/home/CaseOverview";
 import TableTitleHeader from "../../common/table/TableTitleHeader";
@@ -175,10 +176,18 @@ const renderCell = (item, column) => {
   return item[column.key] || "-";
 };
 
+// get user profile type for metric data
+
+const getMetricData = (profileType) => {
+  if (profileType.toLowerCase() === "judges") {
+    return judgesMetricData;
+  } else return metricsData;
+};
+
 const Home = () => {
   return (
     <div className="dashboard_container">
-      <MetricsCardContainer metrics={metricsData} />
+      <MetricsCardContainer metrics={getMetricData("judges")} />
 
       <CaseOverview
         title="Case Overview"
