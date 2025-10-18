@@ -11,7 +11,7 @@ export const RoutePaths = {
 
   // JUDGE ROUTES
   MY_CASES: "/dashboard/my-cases",
-  MY_CALENDAR: "/dashboard/my-calendar",
+  JUDGE_CALENDAR: "/dashboard/judge/calendar",
   MY_NOTE: "/dashboard/my-note",
   HEARING_NOTICE: "/dashboard/hearing-notice",
   POST_JUDGEMENT: "/dashboard/post-judgement",

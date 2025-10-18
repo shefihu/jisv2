@@ -16,7 +16,7 @@ export const sidebarRoutesByRole = {
     {
       name: "My Calendar",
       icon: <ACRIcon />,
-      path: RoutePaths.MY_CALENDAR,
+      path: RoutePaths.JUDGE_CALENDAR,
     },
     {
       name: "My Note",

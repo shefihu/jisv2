@@ -9,6 +9,7 @@ import Home from "../pages/dashboard/home.jsx";
 import AcrCaseDetails from "../pages/dashboard/profiles/acr/acrCases/acrCaseDetails.jsx";
 import AcrCases from "../pages/dashboard/profiles/acr/acrCases/acrCases.jsx";
 import Fiat from "../pages/dashboard/profiles/acr/fiat.jsx";
+import JudgesCalendar from "../pages/dashboard/profiles/judges/judgesCalendar.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.FIAT,
         element: <Fiat />,
+      },
+      {
+        path: RoutePaths.JUDGE_CALENDAR,
+        element: <JudgesCalendar />,
       },
     ],
   },
