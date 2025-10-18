@@ -6,9 +6,9 @@ import { AffidavitTemplate } from "../components/AffidavitTemplate.jsx";
 import TestPage from "../pages/uiTest.jsx";
 import DashboardLayout from "../layout/DashboardLayout.jsx";
 import Home from "../pages/dashboard/home.jsx";
-import AcrCaseDetails from "../pages/dashboard/acrCases/acrCaseDetails.jsx";
-import AcrCases from "../pages/dashboard/acrCases/acrCases.jsx";
-import Fiat from "../pages/dashboard/fiat.jsx";
+import AcrCaseDetails from "../pages/dashboard/profiles/acr/acrCases/acrCaseDetails.jsx";
+import AcrCases from "../pages/dashboard/profiles/acr/acrCases/acrCases.jsx";
+import Fiat from "../pages/dashboard/profiles/acr/fiat.jsx";
 
 export const router = createBrowserRouter([
   {

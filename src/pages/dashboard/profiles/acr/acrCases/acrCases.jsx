@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Tab from "../../../common/Tab";
-import SearchBar from "../../../common/SearchBar";
-import Sort from "../../../common/Sort";
-import DatePicker from "../../../common/DatePicker";
-import { MsExcel, MsWord, PdfIcon } from "../../../assets/Svg";
-import "../../../styles/dashboard/acrCases/acrCases.css";
-import PendingTab from "../../../components/dashboard/acrCases/PendingTab";
-import RevisedCasesTab from "../../../components/dashboard/acrCases/RevisedCasesTab";
-import ApprovedTab from "../../../components/dashboard/acrCases/ApprovedTab";
+import Tab from "../../../../../common/Tab";
+import SearchBar from "../../../../../common/SearchBar";
+import Sort from "../../../../../common/Sort";
+import DatePicker from "../../../../../common/DatePicker";
+import { MsExcel, MsWord, PdfIcon } from "../../../../../assets/Svg";
+import "../../../../../styles/dashboard/acrCases/acrCases.css";
+import PendingTab from "../../../../../components/dashboard/acrCases/PendingTab";
+import RevisedCasesTab from "../../../../../components/dashboard/acrCases/RevisedCasesTab";
+import ApprovedTab from "../../../../../components/dashboard/acrCases/ApprovedTab";
 
 const AcrCases = () => {
   const [activeTab, setActiveTab] = useState("Pending");

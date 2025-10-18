@@ -1,13 +1,13 @@
-import "../../../styles/dashboard/acrCases/acrCaseDetails.css";
-import BackButton from "../../../common/BackButton";
-import Tab from "../../../common/Tab";
+import "../../../../../styles/dashboard/acrCases/acrCaseDetails.css";
+import BackButton from "../../../../../common/BackButton";
+import Tab from "../../../../../common/Tab";
 import { useState } from "react";
-import CaseDetailTab from "../../../components/dashboard/acrCases/caseDetails/CaseDetailTab";
-import CaseClaimTab from "../../../components/dashboard/acrCases/caseDetails/CaseClaimTab";
-import CommentTab from "../../../components/dashboard/acrCases/caseDetails/CommentTab";
-import DocumentTab from "../../../components/dashboard/acrCases/caseDetails/DocumentTab";
-import PartiesTab from "../../../components/dashboard/acrCases/caseDetails/PartiesTab";
-import PaymentTab from "../../../components/dashboard/acrCases/caseDetails/PaymentTab";
+import CaseDetailTab from "../../../../../components/dashboard/acrCases/caseDetails/CaseDetailTab";
+import CaseClaimTab from "../../../../../components/dashboard/acrCases/caseDetails/CaseClaimTab";
+import CommentTab from "../../../../../components/dashboard/acrCases/caseDetails/CommentTab";
+import DocumentTab from "../../../../../components/dashboard/acrCases/caseDetails/DocumentTab";
+import PartiesTab from "../../../../../components/dashboard/acrCases/caseDetails/PartiesTab";
+import PaymentTab from "../../../../../components/dashboard/acrCases/caseDetails/PaymentTab";
 
 function AcrCaseDetails() {
   const [activeTab, setActiveTab] = useState("case Details");
