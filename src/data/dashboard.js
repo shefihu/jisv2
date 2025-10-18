@@ -38,6 +38,43 @@ export const metricsData = [
     type: "urgent",
   },
 ];
+export const judgesMetricData = [
+  {
+    id: 1,
+    icon: <BookIcon />,
+    title: "Total Cases",
+    value: 1234,
+    type: "normal",
+  },
+  {
+    id: 2,
+    icon: <OctagonAlert size={24} color="#fff" />,
+    title: "Scheduled Cases",
+    value: 123,
+    type: "normal",
+  },
+  {
+    id: 3,
+    icon: <TickCircleIcon size={24} />,
+    title: "Concluded Cases",
+    value: 703,
+    type: "normal",
+  },
+  {
+    id: 4,
+    icon: <ClockIcon />,
+    title: "Pending Cases",
+    value: 245,
+    type: "normal",
+  },
+  {
+    id: 5,
+    icon: <OctagonAlert size={24} color="#fff" />,
+    title: "Case Disposition",
+    value: 3,
+    type: "normal",
+  },
+];
 
 export const caseCardData = [
   { label: "Civil Cases", value: 219, color: "#5CA9FB" },

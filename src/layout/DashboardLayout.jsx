@@ -6,6 +6,7 @@ import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const profile = "judges";
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -13,7 +14,11 @@ const DashboardLayout = () => {
 
   return (
     <div className="container">
-      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar
+        isOpen={isOpen}
+        toggleSidebar={toggleSidebar}
+        profile={profile}
+      />
 
       <div className="right">
         <Header isOpen={isOpen} toggleSidebar={toggleSidebar} />

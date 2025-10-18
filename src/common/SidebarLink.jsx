@@ -3,7 +3,7 @@ import { RoutePaths } from "../routes/routePaths";
 import "../styles/sidebar.css";
 import PropTypes from "prop-types";
 
-const SidebarLink = ({ to, icon, name, toggleSidebar }) => {
+const SidebarLink = ({ to, icon, name, toggleSidebar, isSubItem = false }) => {
   const location = useLocation();
   const isActive = (() => {
     // For dashboard root, only match when pathname is exactly "/dashboard"
@@ -21,16 +21,18 @@ const SidebarLink = ({ to, icon, name, toggleSidebar }) => {
       <Link
         to={to}
         onClick={toggleSidebar}
-        className={`sidebar_link ${isActive ? "active" : ""}`}
+        className={`sidebar_link ${isActive ? "active" : ""} ${isSubItem ? "sub_item" : ""}`}
       >
-        <span
-          className={`
-           sidebar_link_icon  ${isActive ? "active" : ""} 
-            `}
-        >
-          {icon}
-        </span>
-        <p>{name}</p>
+        {icon && (
+          <span
+            className={`
+             sidebar_link_icon  ${isActive ? "active" : ""} 
+              `}
+          >
+            {icon}
+          </span>
+        )}
+        <p className={isSubItem ? "sub_item_text" : ""}>{name}</p>
       </Link>
     </li>
   );
@@ -38,9 +40,10 @@ const SidebarLink = ({ to, icon, name, toggleSidebar }) => {
 
 SidebarLink.propTypes = {
   to: PropTypes.string.isRequired,
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.node,
   name: PropTypes.string.isRequired,
   toggleSidebar: PropTypes.func.isRequired,
+  isSubItem: PropTypes.bool,
 };
 
 export default SidebarLink;
