@@ -10,6 +10,8 @@ import AcrCaseDetails from "../pages/dashboard/profiles/acr/acrCases/acrCaseDeta
 import AcrCases from "../pages/dashboard/profiles/acr/acrCases/acrCases.jsx";
 import Fiat from "../pages/dashboard/profiles/acr/fiat.jsx";
 import JudgesCalendar from "../pages/dashboard/profiles/judges/judgesCalendar.jsx";
+import MyCases from "../pages/dashboard/profiles/judges/myCases.jsx";
+import MyCaseDetails from "../pages/dashboard/profiles/judges/myCaseDetails.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.JUDGE_CALENDAR,
         element: <JudgesCalendar />,
+      },
+      {
+        path: RoutePaths.MY_CASES,
+        element: <MyCases />,
+      },
+      {
+        path: RoutePaths.MY_CASE,
+        element: <MyCaseDetails />,
       },
     ],
   },
