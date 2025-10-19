@@ -14,6 +14,10 @@ import MyCases from "../pages/dashboard/profiles/judges/myCases.jsx";
 import MyCaseDetails from "../pages/dashboard/profiles/judges/myCaseDetails.jsx";
 import ScheduleCmc from "../pages/dashboard/profiles/judges/scheduleCmc.jsx";
 import ScheduleTrial from "../pages/dashboard/profiles/judges/scheduleTrial.jsx";
+import MyNote from "../pages/dashboard/profiles/judges/myNote.jsx";
+import HearingNotice from "../pages/dashboard/profiles/judges/hearingNotice.jsx";
+import CancelledScheduledReport from "../pages/dashboard/profiles/judges/njcReport/cancelledScheduledReport.jsx";
+import NjcReport from "../pages/dashboard/profiles/judges/njcReport/njcReport.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +67,22 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.SCHEDULE_CMC,
         element: <ScheduleCmc />,
+      },
+      {
+        path: RoutePaths.MY_NOTE,
+        element: <MyNote />,
+      },
+      {
+        path: RoutePaths.HEARING_NOTICE,
+        element: <HearingNotice />,
+      },
+      {
+        path: RoutePaths.CANCEL_SCHEDULED_REPORT,
+        element: <CancelledScheduledReport />,
+      },
+      {
+        path: RoutePaths.NJC_REPORT,
+        element: <NjcReport />,
       },
     ],
   },

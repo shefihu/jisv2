@@ -1,0 +1,50 @@
+.njc_report_container {
+  padding: 1.875rem;
+  padding-top: 4.688rem;
+}
+
+.njc_report_content {
+  max-width: 37.25rem;
+  width: 100%;
+  margin: auto;
+}
+
+.njc_report_title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.625rem;
+  color: #000000;
+  margin-bottom: 3.25rem;
+  text-align: center;
+}
+
+.njc_report_form_fields_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.njc_report_btn {
+  padding: 1rem 0.625rem;
+
+  background: #5ca9fb;
+  border-radius: 0.5rem;
+
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.125rem;
+
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .njc_report_container {
+    padding: 1.875rem;
+  }
+
+  .njc_report_title {
+    margin-bottom: 2rem;
+  }
+}
