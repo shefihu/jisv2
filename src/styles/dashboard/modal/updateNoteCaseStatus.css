@@ -1,0 +1,42 @@
+.update_note_case_form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.document_upload_section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.upload_label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #000000;
+}
+
+.upload_btn {
+  height: 2.438rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  background: #5ca9fb;
+
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .upload_btn {
+    font-size: 0.85rem;
+  }
+
+  .upload_label {
+    font-size: 0.85rem;
+  }
+}

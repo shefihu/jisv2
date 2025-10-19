@@ -67,7 +67,7 @@
 }
 
 @media (max-width: 480px) {
-  .select_input {
+  .select_btn {
     height: 2.75rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
