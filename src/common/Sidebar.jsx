@@ -63,65 +63,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <nav className="sidebar_menu">
             <ul>
               {routes.map((route, index) => {
-                if (route.hasDropdown) {
-                  const isDropdownOpen = openDropdown === route.name;
-
-                  return (
-                    <li
-                      key={`${route.name}-${index}`}
-                      className="sidebar_dropdown_wrapper"
-                    >
-                      <div
-                        onClick={() => toggleDropdown(route.name)}
-                        className="sidebar_dropdown_content_wrapper"
-                      >
-                        <div>
-                          <span className="sidebar_link_icon">
-                            {route.icon}
-                          </span>
-                          <p>{route.name}</p>
-                        </div>
-                        <ChevronDown
-                          className={`sidebar_dropdown_wrapper_icon ${
-                            isDropdownOpen ? "rotated" : ""
-                          }`}
-                          size={20}
-                        />
-                      </div>
-
-                      <div
-                        className={`sidebar_dropdown_content ${
-                          isDropdownOpen ? "open" : ""
-                        }`}
-                      >
-                        <ul>
-                          {route.dropdownOptions.map((option, optIndex) => {
-                            const active = location.pathname.startsWith(
-                              option.path
-                            );
-                            return (
-                              <li key={optIndex}>
-                                <Link
-                                  style={{
-                                    textDecoration: "none",
-                                  }}
-                                  to={option.path}
-                                  onClick={toggleSidebar}
-                                  className={`drop_down_link ${
-                                    active ? "active" : ""
-                                  }`}
-                                >
-                                  <p className="">{option.name}</p>
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    </li>
-                  );
-                }
-
                 return (
                   <SidebarLink
                     key={`${route.name}-${index}`}
@@ -129,6 +70,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                     name={route.name}
                     to={route.path}
                     toggleSidebar={toggleSidebar}
+                    dropdownOptions={route.dropdownOptions || []}
                   />
                 );
               })}
