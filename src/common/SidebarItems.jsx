@@ -36,7 +36,7 @@ export const sidebarRoutesByRole = {
     {
       name: "Case management",
       icon: <ACRIcon />,
-      hasDropdown: true,
+      // hasDropdown: true,
       dropdownOptions: [
         { name: "Schedule Trial", path: RoutePaths.SCHEDULE_TRIAL },
         { name: "Schedule CMC", path: RoutePaths.SCHEDULE_CMC },
@@ -46,7 +46,7 @@ export const sidebarRoutesByRole = {
     {
       name: "ADR Cases",
       icon: <ACRIcon />,
-      hasDropdown: true,
+      // hasDropdown: true,
       dropdownOptions: [
         { name: "Schedule ADR Cases", path: RoutePaths.SCHEDULE_ADR_CASES },
         { name: "Judge  ADR Cases", path: RoutePaths.JUDGE_ADR_CASES },
@@ -55,7 +55,7 @@ export const sidebarRoutesByRole = {
     {
       name: "NJC Report",
       icon: <ACRIcon />,
-      hasDropdown: true,
+      // hasDropdown: true,
       dropdownOptions: [
         // { name: "Monthly Reports", path: RoutePaths.FIAT },
         // { name: "Annual Reports", path: RoutePaths.FIAT },
@@ -119,7 +119,7 @@ export const sidebarRoutesByRole = {
     {
       name: "Case management",
       icon: <ACRIcon />,
-      hasDropdown: true,
+      // hasDropdown: true,
       dropdownOptions: [
         { name: "Schedule Trial", path: RoutePaths.SCHEDULE_TRIAL },
         { name: "Schedule CMC", path: RoutePaths.SCHEDULE_CMC },
@@ -133,7 +133,7 @@ export const sidebarRoutesByRole = {
     {
       name: "ADR Cases",
       icon: <ACRIcon />,
-      hasDropdown: true,
+      // hasDropdown: true,
       dropdownOptions: [
         { name: "Mediation", path: RoutePaths.FIAT },
         { name: "Arbitration", path: RoutePaths.FIAT },
@@ -144,7 +144,7 @@ export const sidebarRoutesByRole = {
     {
       name: "NJC Report",
       icon: <ACRIcon />,
-      hasDropdown: true,
+      // hasDropdown: true,
       dropdownOptions: [
         // { name: "Monthly Reports", path: RoutePaths.FIAT },
         // { name: "Annual Reports", path: RoutePaths.FIAT },

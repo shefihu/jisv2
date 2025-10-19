@@ -12,7 +12,6 @@ import { CURRENT_USER_ROLE } from "../config/roleConfig";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleDropdown = (routeName) => {
