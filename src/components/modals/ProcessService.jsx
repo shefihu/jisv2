@@ -32,6 +32,7 @@ const ProcessService = () => {
 
   const toggleModal = () => {
     setIsOpen((isOpen) => !isOpen);
+    setSelectedSheriff("");
   };
 
   return (
@@ -89,8 +90,12 @@ const ProcessService = () => {
                 </div>
 
                 <div className="process_service_modal_footer">
-                  <button className="btn btn_outline">Cancel</button>
-                  <button className="btn btn_solid">Save</button>
+                  <button className="btn btn_outline" onClick={toggleModal}>
+                    Cancel
+                  </button>
+                  <button className="btn btn_solid" onClick={toggleModal}>
+                    Save
+                  </button>
                 </div>
               </div>
             </div>
