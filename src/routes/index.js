@@ -18,6 +18,7 @@ import MyNote from "../pages/dashboard/profiles/judges/myNote.jsx";
 import HearingNotice from "../pages/dashboard/profiles/judges/hearingNotice.jsx";
 import CancelledScheduledReport from "../pages/dashboard/profiles/judges/njcReport/cancelledScheduledReport.jsx";
 import NjcReport from "../pages/dashboard/profiles/judges/njcReport/njcReport.jsx";
+import CaseDeposition from "../pages/dashboard/profiles/judges/caseDeposition.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -83,6 +84,11 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.NJC_REPORT,
         element: <NjcReport />,
+      },
+
+      {
+        path: RoutePaths.CASE_DEPOSITION,
+        element: <CaseDeposition />,
       },
     ],
   },
