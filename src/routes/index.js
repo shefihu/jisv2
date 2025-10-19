@@ -95,6 +95,7 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.CASE_DEPOSITION,
         element: <CaseDeposition />,
+      },
       {
         path: RoutePaths.JUDGE_ADR_CASES,
         element: <JudgeAdrCases />,
