@@ -34,6 +34,8 @@ export const RoutePaths = {
   CASE_ASSIGNMENT: "/dashboard/case-assignment",
   MOTION_CASES: "/dashboard/motion-cases",
   ADR_CASES_ASSIGNMENT: "/dashboard/adr-cases/adr-cases-assignment",
+  ASSIGN_MOTION_CASES: "/dashboard/motion-cases/assign-motion-cases",
+  SCHEDULE_MOTION_CASES: "/dashboard/motion-cases/schedule-motion-cases",
 
   // CLERK ROUTES
   ACR_CASES: "/dashboard/acr-cases",
