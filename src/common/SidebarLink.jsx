@@ -10,7 +10,6 @@ const SidebarLink = ({
   icon,
   name,
   toggleSidebar,
-  isSubItem = false,
   dropdownOptions = [],
 }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -24,7 +23,7 @@ const SidebarLink = ({
 
     if (dropdownOptions.length > 0) {
       return dropdownOptions.some((option) =>
-        location.pathname.startsWith(option.path)
+        location.pathname === option.path
       );
     }
 
@@ -52,7 +51,7 @@ const SidebarLink = ({
               {icon}
             </span>
           )}
-          <p className={isSubItem ? "sub_item_text" : ""}>{name}</p>
+          <p className={"sub_item_text"}>{name}</p>
         </Link>
       ) : (
         <div
@@ -69,7 +68,7 @@ const SidebarLink = ({
                 {icon}
               </span>
             )}
-            <p className={isSubItem ? "sub_item_text" : ""}>{name}</p>
+            <p className={"sub_item_text"}>{name}</p>
           </div>
 
           <ChevronDown size={20} color="#737373" />
@@ -84,7 +83,7 @@ const SidebarLink = ({
                 to={option.path}
                 onClick={toggleSidebar}
                 className={`dropdown_option ${
-                  location.pathname.startsWith(option.path) ? "active" : ""
+                  location.pathname === option.path ? "active" : ""
                 }`}
               >
                 <p className="sub_item_text">{option.name}</p>
@@ -102,7 +101,6 @@ SidebarLink.propTypes = {
   icon: PropTypes.node,
   name: PropTypes.string.isRequired,
   toggleSidebar: PropTypes.func.isRequired,
-  isSubItem: PropTypes.bool,
   dropdownOptions: PropTypes.array,
 };
 
