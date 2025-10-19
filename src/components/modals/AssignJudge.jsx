@@ -3,15 +3,30 @@ import "../../styles/dashboard/modal/assignDeputySheriff.css";
 
 import { useState } from "react";
 import SelectDropdown from "../dashboard/SelectField";
-const deputySheriffOptions = [
-  { label: "Deputy Sheriff John Smith", value: "john_smith" },
-  { label: "Deputy Sheriff Jane Doe", value: "jane_doe" },
-  { label: "Deputy Sheriff Mike Johnson", value: "mike_johnson" },
+const roleOptions = [
+  { label: "Chief Judge", value: "chief_judge" },
+  { label: "High Court Judge", value: "high_court_judge" },
+  { label: "Magistrate", value: "magistrate" },
 ];
 
-const AssignDeputySheriff = () => {
+const judgeOptions = [
+  { label: "Hon. Justice A.A Phillips (Mrs.)", value: "phillips" },
+  { label: "Hon. Justice B.C Johnson", value: "johnson" },
+  { label: "Hon. Justice D.E Williams", value: "williams" },
+];
+
+const divisionOptions = [
+  { label: "Commercial Division", value: "commercial" },
+  { label: "Family Division", value: "family" },
+  { label: "Criminal Division", value: "criminal" },
+  { label: "Civil Division", value: "civil" },
+];
+
+const AssignJudge = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedDeputy, setSelectedDeputy] = useState("");
+  const [selectedRole, setSelectedRole] = useState("");
+  const [selectedJudge, setSelectedJudge] = useState("");
+  const [selectedDivision, setSelectedDivision] = useState("");
 
   const toggleModal = () => {
     setIsOpen((isOpen) => !isOpen);
@@ -19,11 +34,8 @@ const AssignDeputySheriff = () => {
 
   return (
     <>
-      <button
-        className="open_modal_btn open_modal_assign_deputy_modal_btn"
-        onClick={toggleModal}
-      >
-        Assign
+      <button className="open_modal_btn " onClick={toggleModal}>
+        Re-assign
       </button>
 
       {isOpen && (
@@ -32,14 +44,28 @@ const AssignDeputySheriff = () => {
             className="assign_deputy_modal_container"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="assign_deputy_modal_title">Assign deputy sheriff</h3>
+            <h3 className="assign_deputy_modal_title">Assign Judge</h3>
 
             <form className="assign_deputy_modal_form">
               <SelectDropdown
-                label="Deputy Sheriff"
-                options={deputySheriffOptions}
-                value={selectedDeputy}
-                onChange={setSelectedDeputy}
+                label="Division"
+                options={divisionOptions}
+                value={selectedDivision}
+                onChange={setSelectedDivision}
+                placeholder="Select"
+              />{" "}
+              <SelectDropdown
+                label="Role"
+                options={roleOptions}
+                value={selectedRole}
+                onChange={setSelectedRole}
+                placeholder="Select"
+              />
+              <SelectDropdown
+                label="Judge"
+                options={judgeOptions}
+                value={selectedJudge}
+                onChange={setSelectedJudge}
                 placeholder="Select"
               />
               <div>
@@ -79,4 +105,4 @@ const AssignDeputySheriff = () => {
   );
 };
 
-export default AssignDeputySheriff;
+export default AssignJudge;

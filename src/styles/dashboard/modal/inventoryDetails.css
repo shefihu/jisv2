@@ -64,7 +64,7 @@
   color: #2c3e50;
 }
 
-input[type="checkbox"] {
+.inventory_table input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
   accent-color: #2f73da;
@@ -77,29 +77,29 @@ input[type="checkbox"] {
   }
 
   .inventory_table th {
-    padding: 20px 8px;
-    font-size: 14px;
+    padding: 1.25rem 0.5rem;
+    font-size: 0.875rem;
     white-space: nowrap;
   }
 
   .inventory_table td {
-    padding: 25px 8px;
-    font-size: 13px;
+    padding: 1.563rem 0.5rem;
+    font-size: 0.813rem;
     white-space: nowrap;
   }
 }
 
 @media (max-width: 480px) {
   .inventory_table th {
-    padding: 15px 5px;
-    font-size: 12px;
-    line-height: 14px;
+    padding: 0.938rem 0.313rem;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
   }
 
   .inventory_table td {
-    padding: 20px 5px;
-    font-size: 12px;
-    line-height: 13px;
+    padding: 1.25rem 0.313rem;
+    font-size: 0.75rem;
+    line-height: 0.813rem;
   }
 
   .inventory_table td.inventory_table_party_name {
@@ -107,8 +107,8 @@ input[type="checkbox"] {
     word-break: break-word;
   }
 
-  input[type="checkbox"] {
-    width: 14px;
-    height: 14px;
+  .inventory_table input[type="checkbox"] {
+    width: 0.875rem;
+    height: 0.875rem;
   }
 }

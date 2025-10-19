@@ -237,7 +237,7 @@ const CjAuctionCases = () => {
         <Tab activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
       </div>
       {/* Table */}
-      <TableTitleHeader title="My Cases" />
+      <TableTitleHeader title="CJ Auction Cases" />
 
       <div className="arc-case-table-wrapper">
         <div className="arc-case-table-content">

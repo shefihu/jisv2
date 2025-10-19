@@ -22,6 +22,7 @@ import CjAuctionCases from "../pages/dashboard/profiles/chiefJudge/cjAuctionCase
 import CaseDeposition from "../pages/dashboard/profiles/judges/caseDeposition.jsx";
 import ScheduleAdrCases from "../pages/dashboard/profiles/judges/scheduleAdrCases.jsx";
 import JudgeAdrCases from "../pages/dashboard/profiles/judges/judgeAdrCases.jsx";
+import CaseAssignment from "../pages/dashboard/profiles/chiefJudge/caseAssignment.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -107,6 +108,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.SCHEDULE_ADR_CASES,
         element: <ScheduleAdrCases />,
+      },
+      {
+        path: RoutePaths.CASE_ASSIGNMENT,
+        element: <CaseAssignment />,
       },
     ],
   },
