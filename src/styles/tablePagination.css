@@ -44,6 +44,7 @@
 .entries_input_icon {
   flex-shrink: 0;
   display: flex;
+  padding: 0;
 }
 
 .entries_input {
