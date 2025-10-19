@@ -18,6 +18,7 @@ import MyNote from "../pages/dashboard/profiles/judges/myNote.jsx";
 import HearingNotice from "../pages/dashboard/profiles/judges/hearingNotice.jsx";
 import CancelledScheduledReport from "../pages/dashboard/profiles/judges/njcReport/cancelledScheduledReport.jsx";
 import NjcReport from "../pages/dashboard/profiles/judges/njcReport/njcReport.jsx";
+import CjAuctionCases from "../pages/dashboard/profiles/chiefJudge/cjAuctionCases.jsx";
 import CaseDeposition from "../pages/dashboard/profiles/judges/caseDeposition.jsx";
 import ScheduleAdrCases from "../pages/dashboard/profiles/judges/scheduleAdrCases.jsx";
 import JudgeAdrCases from "../pages/dashboard/profiles/judges/judgeAdrCases.jsx";
@@ -91,7 +92,10 @@ export const router = createBrowserRouter([
         path: RoutePaths.NJC_REPORT,
         element: <NjcReport />,
       },
-
+      {
+        path: RoutePaths.CJ_ACTION_CASES,
+        element: <CjAuctionCases />,
+      },
       {
         path: RoutePaths.CASE_DEPOSITION,
         element: <CaseDeposition />,
