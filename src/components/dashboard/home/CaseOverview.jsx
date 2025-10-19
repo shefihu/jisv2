@@ -9,7 +9,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const CaseOverview = ({
   title = "Case Overview",
   data,
-  cutout = "50%",
+  cutout = "60%",
   hoverOffset = 10,
   containerId = "legend-container",
   defaultSelected,
