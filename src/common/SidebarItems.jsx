@@ -99,7 +99,13 @@ export const sidebarRoutesByRole = {
     {
       name: "Motion cases",
       icon: <ACRIcon />,
-      path: RoutePaths.MOTION_CASES,
+      dropdownOptions: [
+        { name: "Assign Motion Cases", path: RoutePaths.ASSIGN_MOTION_CASES },
+        {
+          name: "Schedule Motion Cases",
+          path: RoutePaths.SCHEDULE_MOTION_CASES,
+        },
+      ],
     },
     {
       name: "My Note",
