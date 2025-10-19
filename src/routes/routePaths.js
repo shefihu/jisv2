@@ -22,6 +22,7 @@ export const RoutePaths = {
   SCHEDULE_CMC: "/dashboard/case-management/schedule-cmc",
   ADR_CASES: "/dashboard/adr-cases",
   NJC_REPORT: "/dashboard/njc-report",
+  CANCEL_SCHEDULED_REPORT: "/dashboard/njc-report/cancel-scheduled-report",
 
   // CLERK ROUTES
   ACR_CASES: "/dashboard/acr-cases",

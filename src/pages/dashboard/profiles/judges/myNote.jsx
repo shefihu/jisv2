@@ -11,21 +11,39 @@ import { MsExcel, MsWord, PdfIcon } from "../../../../assets/Svg";
 import { useNavigate } from "react-router-dom";
 import UpdateNoteCaseStatus from "../../../../components/modals/UpdateNoteCaseStatus";
 
+const getBackgroundColor = (index) => {
+  const position = index % 9;
+
+  switch (position) {
+    case 0:
+      return "#FF0000";
+    case 1:
+      return "#5CA9FB";
+    case 2:
+      return "#FEAA34";
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+      return "#FFD964";
+
+    case 8:
+      return "#ffffff";
+    default:
+      return "#ffffff";
+  }
+};
+
 // Mock data for My Cases page
 const myCasesData = Array.from({ length: 12 }, (_, i) => ({
   id: `ID/3885GCM/2025`,
   suitNumber: `ID/3885GCM/2025`,
   caseTitle: "State of Lagos VS Salman Lukman",
-  filingType: i === 0 ? "Civil" : i === 1 ? "Civil" : "Criminal",
-  classification:
-    i === 0
-      ? "General Civil"
-      : i === 1
-      ? "Family & Probate"
-      : "Filing of information",
-  origin: "New Filed",
+
   status: "Judgment",
   lastEdited: "12 Sept, 2025",
+  backgroundColor: getBackgroundColor(i),
 }));
 
 const MyNote = () => {
@@ -83,17 +101,6 @@ const MyNote = () => {
     },
   ];
 
-  const getBackgroundColor = (filingType) => {
-    switch (filingType.toLowerCase()) {
-      case "criminal":
-        return "#C30DDF";
-      case "civil":
-        return "#5CA9FB";
-      default:
-        return "#ffffff";
-    }
-  };
-
   // Custom cell renderer for special columns
   const renderCell = (item, column) => {
     // Render suit number with background color based on filing type
@@ -102,7 +109,8 @@ const MyNote = () => {
         <div
           className="suit-number-cell"
           style={{
-            backgroundColor: getBackgroundColor(item.filingType),
+            backgroundColor: item.backgroundColor,
+            color: "#282828",
           }}
         >
           {item.suitNumber}
@@ -170,7 +178,7 @@ const MyNote = () => {
       </div>
 
       {/* Table */}
-      <TableTitleHeader title="My Cases" />
+      <TableTitleHeader title="My Note" />
 
       <div className="arc-case-table-wrapper">
         <div className="arc-case-table-content">

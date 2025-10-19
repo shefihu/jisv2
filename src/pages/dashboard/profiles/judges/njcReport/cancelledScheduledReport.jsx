@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import TableTitleHeader from "../../../../common/table/TableTitleHeader";
-import TableHeader from "../../../../common/table/TableHeader";
-import TableContent from "../../../../common/table/TableContent";
-import TablePagination from "../../../../common/table/TablePagination";
-import SearchBar from "../../../../common/SearchBar";
-import Sort from "../../../../common/Sort";
-import DatePicker from "../../../../common/DatePicker";
-import "../../../../styles/dashboard/acrCases/acrCases.css";
-import { MsExcel, MsWord, PdfIcon } from "../../../../assets/Svg";
-import UpdateNoteCaseStatus from "../../../../components/modals/UpdateNoteCaseStatus";
-import ProcessService from "../../../../components/modals/ProcessService";
+import { useState } from "react";
+import TableTitleHeader from "../../../../../common/table/TableTitleHeader";
+import TableHeader from "../../../../../common/table/TableHeader";
+import TableContent from "../../../../../common/table/TableContent";
+import TablePagination from "../../../../../common/table/TablePagination";
+import SearchBar from "../../../../../common/SearchBar";
+import Sort from "../../../../../common/Sort";
+import DatePicker from "../../../../../common/DatePicker";
+import "../../../../../styles/dashboard/acrCases/acrCases.css";
+import { MsExcel, MsWord, PdfIcon } from "../../../../../assets/Svg";
+import { useNavigate } from "react-router-dom";
 
 const getBackgroundColor = (index) => {
   const position = index % 9;
@@ -18,15 +17,15 @@ const getBackgroundColor = (index) => {
     case 0:
       return "#FF0000";
     case 1:
-      return "#5CA9FB";
+      return "#FFFF00";
     case 2:
-      return "#FEAA34";
     case 3:
     case 4:
     case 5:
     case 6:
+      return "#5CA9FB";
     case 7:
-      return "#FFD964";
+      return "#C30DDF";
     case 8:
       return "#ffffff";
     default:
@@ -38,12 +37,14 @@ const getBackgroundColor = (index) => {
 const myCasesData = Array.from({ length: 24 }, (_, i) => ({
   id: `ID/3885GCM/2025`,
   suitNumber: `ID/3885GCM/2025`,
-  parties: "State of Lagos VS Salman Lukman",
-  scheduledData: "12 Sept, 2025",
+  comment: "State of Lagos VS Salman Lukman",
+  username: "Dadam",
+  userType: "Judge",
+  scheduledDate: "12 Sept, 2025",
   backgroundColor: getBackgroundColor(i),
 }));
 
-const HearingNotice = () => {
+const CancelledScheduledReport = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(10);
   const [search, setSearch] = useState("");
@@ -51,6 +52,7 @@ const HearingNotice = () => {
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const navigate = useNavigate();
   const sortOptions = ["Ascending", "Descending"];
 
   const totalEntries = myCasesData.length;
@@ -72,22 +74,26 @@ const HearingNotice = () => {
       width: "1.2fr",
       align: "center",
     },
-    { key: "parties", header: "Parties", width: "6fr", align: "center" },
+    { key: "comment", header: "Comment", width: "6fr", align: "center" },
     // { key: "filingType", header: "Filing Type", width: "1fr", align: "center" },
 
     {
-      key: "scheduledData",
-      header: "Scheduled Date",
+      key: "username",
+      header: "User Name",
       width: "1fr",
       align: "center",
     },
-
     {
-      key: "processService",
-      header: "Process Service",
+      key: "userType",
+      header: "User Type",
       width: "1fr",
       align: "center",
-      isAction: true,
+    },
+    {
+      key: "scheduledDate",
+      header: "Scheduled Date",
+      width: "1.3fr",
+      align: "center",
     },
   ];
 
@@ -106,13 +112,6 @@ const HearingNotice = () => {
           {item.suitNumber}
         </div>
       );
-    }
-
-    // Render details button
-
-    // Render update button
-    if (column.key === "processService") {
-      return <ProcessService />;
     }
 
     // Default rendering
@@ -168,7 +167,7 @@ const HearingNotice = () => {
       </div>
 
       {/* Table */}
-      <TableTitleHeader title="My Note" />
+      <TableTitleHeader title="Cancelled Scheduled" />
 
       <div className="arc-case-table-wrapper">
         <div className="arc-case-table-content">
@@ -193,4 +192,4 @@ const HearingNotice = () => {
   );
 };
 
-export default HearingNotice;
+export default CancelledScheduledReport;
