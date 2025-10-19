@@ -92,6 +92,11 @@ export const sidebarRoutesByRole = {
       path: RoutePaths.CJ_ACTION_CASES,
     },
     {
+      name: "Case assignment report",
+      icon: <ACRIcon />,
+      path: RoutePaths.CASE_ASSIGNMENT_REPORT,
+    },
+    {
       name: "Motion cases",
       icon: <ACRIcon />,
       path: RoutePaths.MOTION_CASES,
@@ -119,6 +124,10 @@ export const sidebarRoutesByRole = {
         { name: "Schedule Trial", path: RoutePaths.SCHEDULE_TRIAL },
         { name: "Schedule CMC", path: RoutePaths.SCHEDULE_CMC },
         { name: "Case Deposition", path: RoutePaths.CASE_DEPOSITION },
+        {
+          name: "Case assignment",
+          path: RoutePaths.CASE_ASSIGNMENT,
+        },
       ],
     },
     {
