@@ -40,7 +40,7 @@ export const sidebarRoutesByRole = {
       dropdownOptions: [
         { name: "Schedule Trial", path: RoutePaths.SCHEDULE_TRIAL },
         { name: "Schedule CMC", path: RoutePaths.SCHEDULE_CMC },
-        { name: "Case Deposition", path: RoutePaths.FIAT },
+        { name: "Case Deposition", path: RoutePaths.CASE_DEPOSITION },
       ],
     },
     {
@@ -120,7 +120,7 @@ export const sidebarRoutesByRole = {
       dropdownOptions: [
         { name: "Schedule Trial", path: RoutePaths.SCHEDULE_TRIAL },
         { name: "Schedule CMC", path: RoutePaths.SCHEDULE_CMC },
-        { name: "Case Deposition", path: RoutePaths.FIAT },
+        { name: "Case Deposition", path: RoutePaths.CASE_DEPOSITION },
       ],
     },
     {
