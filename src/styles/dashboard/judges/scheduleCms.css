@@ -10,4 +10,6 @@
 }
 .location_zoom {
   color: #5ca9fb;
+  font-weight: 500;
+  text-decoration: underline;
 }

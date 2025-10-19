@@ -341,14 +341,12 @@ const ScheduleTrial = () => {
         }
         if (column.key === "hearingOutcome") {
           return (
-            <span
-              style={{
-                fontWeight: "600",
-                fontSize: "1rem",
-              }}
+            <button
+              className="schedule-btn"
+              onClick={() => console.log("View clicked for", item.suitNumber)}
             >
-              {item.hearingOutcome}
-            </span>
+              View
+            </button>
           );
         }
         break;

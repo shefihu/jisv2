@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import "../styles/sort.css";
 import PropTypes from "prop-types";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Sort({
   placeHolder = "Sort",
@@ -12,6 +12,7 @@ function Sort({
   setOpen,
 }) {
   const dropdownRef = useRef(null);
+  const [otherDropDown, setOtherDropDown] = useState("");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -63,19 +64,38 @@ function Sort({
                   sort === option ? " sort_option_selected" : ""
                 }`}
               >
-                <input
-                  type="radio"
-                  checked={sort === option}
-                  readOnly
-                  className="sort_checkbox"
-                  name="sort_option"
-                />
                 {option}
               </li>
             ))}
           </ul>
         )}
       </div>
+
+      <button
+        className={
+          "sort_button " + (otherDropDown === "normal" ? "active" : "")
+        }
+        onClick={() => setOtherDropDown("normal")}
+        clas
+      >
+        Normal
+      </button>
+      <button
+        className={
+          "sort_button " + (otherDropDown === "fastTrack" ? "active" : "")
+        }
+        onClick={() => setOtherDropDown("fastTrack")}
+      >
+        Fast Track
+      </button>
+      <button
+        className={
+          "sort_button " + (otherDropDown === "urgency" ? "active" : "")
+        }
+        onClick={() => setOtherDropDown("urgency")}
+      >
+        Urgency
+      </button>
     </div>
   );
 }

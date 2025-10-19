@@ -104,7 +104,7 @@ function ScheduleNewCaseForm() {
       </div>
 
       <div className="schedule_new_case_form_action_btn">
-        <button className="cancel_bnt">Cancel</button>
+        <button className="cancel_btn">Cancel</button>
         <button className="schedule_new_case_btn">Schedule New Case</button>
       </div>
     </form>
