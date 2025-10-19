@@ -48,10 +48,8 @@ export const sidebarRoutesByRole = {
       icon: <ACRIcon />,
       hasDropdown: true,
       dropdownOptions: [
-        { name: "Mediation", path: RoutePaths.FIAT },
-        { name: "Arbitration", path: RoutePaths.FIAT },
-        { name: "Conciliation", path: RoutePaths.FIAT },
-        { name: "Settlement", path: RoutePaths.FIAT },
+        { name: "Schedule ADR Cases", path: RoutePaths.SCHEDULE_ADR_CASES },
+        { name: "Judge  ADR Cases", path: RoutePaths.JUDGE_ADR_CASES },
       ],
     },
     {
