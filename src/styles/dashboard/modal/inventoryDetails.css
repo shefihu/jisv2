@@ -1,0 +1,114 @@
+.open_modal_inventory_table_modal_btn {
+  font-weight: 400;
+}
+
+.inventory_table_modal_container {
+  max-width: 80.5625rem;
+  width: 100%;
+}
+
+.inventory_table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.inventory_table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.8125rem;
+}
+
+.inventory_table th {
+  text-align: center;
+  padding: 1.75rem 0.625rem;
+  border: 1px solid #5ca9fb;
+
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  white-space: wrap;
+
+  color: #000000;
+}
+
+.inventory_table td {
+  padding: 2.21875rem 0.625rem;
+  border: 1px solid #c8cace;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 0.9375rem;
+  text-align: center;
+  white-space: wrap;
+  color: #282828;
+}
+
+.inventory_table td.inventory_table_party_name {
+  white-space: nowrap;
+}
+
+.color_tag {
+  width: 0.25rem;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0.125rem 0 0 0.125rem;
+}
+
+.suit_text {
+  padding-left: 0.625rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #2f73da;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .inventory_table_modal_container {
+    max-width: 100%;
+  }
+
+  .inventory_table th {
+    padding: 20px 8px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .inventory_table td {
+    padding: 25px 8px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .inventory_table th {
+    padding: 15px 5px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .inventory_table td {
+    padding: 20px 5px;
+    font-size: 12px;
+    line-height: 13px;
+  }
+
+  .inventory_table td.inventory_table_party_name {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+  }
+}

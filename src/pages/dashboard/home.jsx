@@ -1,5 +1,6 @@
 import { CURRENT_USER_ROLE, USER_ROLES } from "../../config/roleConfig";
 import "../../styles/dashboard/home/index.css";
+import ChiefJudgeDashboard from "./profiles/chiefJudge/chiefJudgeDashboard";
 import JudgeDashboard from "./profiles/judges/judgesDashboard";
 
 // Clerk Dashboard Component
@@ -114,6 +115,8 @@ const Home = () => {
         return <JudgeDashboard />;
       case USER_ROLES.ACR:
         return <ClerkDashboard />;
+      case USER_ROLES.CHIEF_JUDGE:
+        return <ChiefJudgeDashboard />;
       case USER_ROLES.REGISTRAR:
         return <RegistrarDashboard />;
       case USER_ROLES.LAWYER:
