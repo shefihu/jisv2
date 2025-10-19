@@ -14,6 +14,8 @@ import MyCases from "../pages/dashboard/profiles/judges/myCases.jsx";
 import MyCaseDetails from "../pages/dashboard/profiles/judges/myCaseDetails.jsx";
 import ScheduleCmc from "../pages/dashboard/profiles/judges/scheduleCmc.jsx";
 import ScheduleTrial from "../pages/dashboard/profiles/judges/scheduleTrial.jsx";
+import ScheduleAdrCases from "../pages/dashboard/profiles/judges/scheduleAdrCases.jsx";
+import JudgeAdrCases from "../pages/dashboard/profiles/judges/judgeAdrCases.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -61,8 +63,20 @@ export const router = createBrowserRouter([
         element: <ScheduleTrial />,
       },
       {
+        path: RoutePaths.SCHEDULE_TRIAL,
+        element: <ScheduleTrial />,
+      },
+      {
         path: RoutePaths.SCHEDULE_CMC,
         element: <ScheduleCmc />,
+      },
+      {
+        path: RoutePaths.SCHEDULE_ADR_CASES,
+        element: <ScheduleAdrCases />,
+      },
+      {
+        path: RoutePaths.JUDGE_ADR_CASES,
+        element: <JudgeAdrCases />,
       },
     ],
   },
