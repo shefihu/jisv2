@@ -56,6 +56,13 @@ export const RoutePaths = {
   DOCUMENTS: "/dashboard/documents",
   COURT_DATES: "/dashboard/court-dates",
 
+  // DEPUTY SHERIFF ROUTES
+  DS_CASES: "/dashboard/ds-cases",
+  DS_CASE: "/dashboard/ds-cases/:suitId",
+  DS_MOTION_CASES: "/dashboard/ds-motion-cases",
+  DS_ADR_CASES: "/dashboard/ds-adr-cases",
+  REPORT: "/dashboard/report",
+
   // PUBLIC ROUTES
   CASE_SEARCH: "/dashboard/case-search",
 };
