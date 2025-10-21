@@ -10,6 +10,8 @@ import { MsExcel, MsWord, PdfIcon } from "../../../../assets/Svg";
 import "../../../../styles/dashboard/judges/scheduleCms.css";
 import "../../../../styles/dashboard/judges/caseAssignment.css";
 import Tab from "../../../../common/Tab";
+import AssignServiceSheriff from "../../../../components/modals/AssignServiceSheriff";
+import DocumentToFIleModal from "../../../../components/modals/DocumentToFileModal";
 
 const getBackgroundColor = (index) => {
   const colors = ["#FF0000", "#5CA9FB", "#FEAA34", "#FFD964", "#C30DDF"];
@@ -162,25 +164,34 @@ const DsCase = () => {
     }
 
     if (column.key === "documentToFile") {
-      return <button className="action-button">Choose</button>;
+      return <DocumentToFIleModal />;
     }
 
     if (column.key === "details") {
-      return <button className="action-button">View</button>;
+      return (
+        <button
+          className="action-button"
+          style={{
+            fontWeight: "400",
+          }}
+        >
+          View
+        </button>
+      );
     }
 
     if (
       column.key === "action" &&
       activeTab.toLowerCase() === "pending cases".toLowerCase()
     ) {
-      return <button className="action-button">Assign</button>;
+      return <AssignServiceSheriff title={"Assign"} />;
     }
 
     if (
       column.key === "action" &&
       activeTab.toLowerCase() === "assigned cases".toLowerCase()
     ) {
-      return <button className="action-button">Re-Assign</button>;
+      return <AssignServiceSheriff title={"Re-assign"} />;
     }
 
     return item[column.key] || "-";

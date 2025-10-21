@@ -27,6 +27,7 @@ import CaseAssignmentReport from "../pages/dashboard/profiles/chiefJudge/caseAss
 import AdrCaseAssignment from "../pages/dashboard/profiles/chiefJudge/adrCaseAssignment.jsx";
 import AssignMotionCases from "../pages/dashboard/profiles/chiefJudge/assignMotionCases.jsx";
 import ScheduleMotionCase from "../pages/dashboard/profiles/chiefJudge/scheduleMotionCases.jsx";
+import DsCase from "../pages/dashboard/profiles/deputySheriff/dsCases.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -132,6 +133,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.ASSIGN_MOTION_CASES,
         element: <AssignMotionCases />,
+      },
+      {
+        path: RoutePaths.DS_CASES,
+        element: <DsCase />,
       },
     ],
   },
