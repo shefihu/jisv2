@@ -2,9 +2,10 @@ export const USER_ROLES = {
   JUDGE: "judge",
   CHIEF_JUDGE: "chiefJudge",
   ACR: "acr",
+  DEPUTY_SHERIFF: "deputySheriff",
 };
 
-export const CURRENT_USER_ROLE = USER_ROLES.CHIEF_JUDGE;
+export const CURRENT_USER_ROLE = USER_ROLES.DEPUTY_SHERIFF;
 
 export const ROLE_PERMISSIONS = {
   [USER_ROLES.JUDGE]: {
@@ -41,6 +42,18 @@ export const ROLE_PERMISSIONS = {
   },
   [USER_ROLES.ACR]: {
     allowedRoutes: ["DASHBOARD", "ACR_CASES", "FIAT"],
+    defaultRoute: "/dashboard",
+  },
+
+  [USER_ROLES.DEPUTY_SHERIFF]: {
+    allowedRoutes: [
+      "DASHBOARD",
+      "DS_CASES",
+      "DS_MOTION_CASES",
+      "DS_ADR_CASES",
+      "POST_JUDGEMENT",
+      "REPORT",
+    ],
     defaultRoute: "/dashboard",
   },
   //   [USER_ROLES.PUBLIC]: {
