@@ -205,7 +205,7 @@ export const sidebarRoutesByRole = {
     {
       name: "Post Judgement",
       icon: <ACRIcon />,
-      path: RoutePaths.POST_JUDGEMENT,
+      path: RoutePaths.DS_POST_JUDGEMENT,
     },
     {
       name: "Report",
