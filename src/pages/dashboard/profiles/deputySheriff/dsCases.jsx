@@ -12,7 +12,8 @@ import "../../../../styles/dashboard/judges/caseAssignment.css";
 import Tab from "../../../../common/Tab";
 import AssignServiceSheriff from "../../../../components/modals/AssignServiceSheriff";
 import DocumentToFIleModal from "../../../../components/modals/DocumentToFileModal";
-
+import { useNavigate } from "react-router-dom";
+import { RoutePaths } from "../../../../routes/routePaths";
 const getBackgroundColor = (index) => {
   const colors = ["#FF0000", "#5CA9FB", "#FEAA34", "#FFD964", "#C30DDF"];
   return colors[index % colors.length];
@@ -34,6 +35,7 @@ const DsCase = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const navigate = useNavigate();
 
   const handleStartDateChange = (date) => {
     setStartDate(date);
@@ -170,6 +172,14 @@ const DsCase = () => {
     if (column.key === "details") {
       return (
         <button
+          onClick={() =>
+            navigate(
+              RoutePaths.DS_CASE.replace(
+                ":suitId",
+                item.suitNumber.replaceAll("/", "-")
+              )
+            )
+          }
           className="action-button"
           style={{
             fontWeight: "400",
