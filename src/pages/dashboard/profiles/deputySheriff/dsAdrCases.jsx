@@ -24,11 +24,13 @@ const cases = Array.from({ length: 12 }, (_, i) => ({
   suitNumber: `ID/388${5 + i}GCM/2025`,
   caseTitle: "State of Lagos VS Salman Lukman",
   filingType: "Motion",
+  documentToFile: "Choose",
+  sheriffName: "Salman Lukman",
   backgroundColor: getBackgroundColor(i),
 }));
 
-const DsMotionCases = () => {
-  const [activeTab, setActiveTab] = useState("pending Motion");
+const DsAdrCases = () => {
+  const [activeTab, setActiveTab] = useState("pending cases");
 
   const [currentPage, setCurrentPage] = useState(1);
   const [startDate, setStartDate] = useState(null);
@@ -51,12 +53,12 @@ const DsMotionCases = () => {
 
   // Define columns for DS Cases table
 
-  const tabs = ["Pending Motion", "Assigned Motion"];
+  const tabs = ["Pending cases", "Assigned cases"];
 
   // Define columns per tab
   const getColumns = () => {
     switch (activeTab.toLowerCase()) {
-      case "Pending Motion".toLowerCase():
+      case "pending cases".toLowerCase():
         return [
           {
             key: "suitNumber",
@@ -75,6 +77,12 @@ const DsMotionCases = () => {
             header: "Filing Type",
             width: "1.6fr",
             align: "center",
+          },
+          {
+            key: "documentToFile",
+            header: "Document to File",
+            width: "2.3fr",
+            isAction: true,
           },
           {
             key: "details",
@@ -93,7 +101,7 @@ const DsMotionCases = () => {
           },
         ];
 
-      case "Assigned Motion".toLowerCase():
+      case "assigned cases".toLowerCase():
         return [
           {
             key: "suitNumber",
@@ -113,7 +121,12 @@ const DsMotionCases = () => {
             width: "1.6fr",
             align: "center",
           },
-
+          {
+            key: "sheriffName",
+            header: "Sheriff Name",
+            width: "2fr",
+            align: "center",
+          },
           {
             key: "details",
             header: "Details",
@@ -152,6 +165,10 @@ const DsMotionCases = () => {
       );
     }
 
+    if (column.key === "documentToFile") {
+      return <DocumentToFIleModal />;
+    }
+
     if (column.key === "details") {
       return (
         <button
@@ -175,14 +192,14 @@ const DsMotionCases = () => {
 
     if (
       column.key === "action" &&
-      activeTab.toLowerCase() === "Pending Motion".toLowerCase()
+      activeTab.toLowerCase() === "pending cases".toLowerCase()
     ) {
       return <AssignServiceSheriff title={"Assign"} />;
     }
 
     if (
       column.key === "action" &&
-      activeTab.toLowerCase() === "Assigned Motion".toLowerCase()
+      activeTab.toLowerCase() === "assigned cases".toLowerCase()
     ) {
       return <AssignServiceSheriff title={"Re-assign"} />;
     }
@@ -236,7 +253,7 @@ const DsMotionCases = () => {
         </div>
       </div>
       {/* Table */}
-      <TableTitleHeader title="DS - Motion Cases" />
+      <TableTitleHeader title="DS - ADR Cases" />
       <div className="arc-case-table-wrapper">
         <div className="arc-case-table-content">
           <TableHeader columns={columns} />
@@ -260,4 +277,4 @@ const DsMotionCases = () => {
   );
 };
 
-export default DsMotionCases;
+export default DsAdrCases;

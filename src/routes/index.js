@@ -30,6 +30,7 @@ import ScheduleMotionCase from "../pages/dashboard/profiles/chiefJudge/scheduleM
 import DsCase from "../pages/dashboard/profiles/deputySheriff/dsCases.jsx";
 import DsCaseDetails from "../pages/dashboard/profiles/deputySheriff/dsCaseDetails.jsx";
 import DsMotionCases from "../pages/dashboard/profiles/deputySheriff/dsMotionCases.jsx";
+import DsAdrCases from "../pages/dashboard/profiles/deputySheriff/dsAdrCases.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -147,6 +148,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.DS_MOTION_CASES,
         element: <DsMotionCases />,
+      },
+      {
+        path: RoutePaths.DS_ADR_CASES,
+        element: <DsAdrCases />,
       },
     ],
   },
