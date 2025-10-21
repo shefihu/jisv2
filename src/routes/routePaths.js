@@ -61,6 +61,7 @@ export const RoutePaths = {
   DS_CASE: "/dashboard/ds-cases/:suitId",
   DS_MOTION_CASES: "/dashboard/ds-motion-cases",
   DS_ADR_CASES: "/dashboard/ds-adr-cases",
+  DS_POST_JUDGEMENT: "/dashboard/ds-post-judgement",
   REPORT: "/dashboard/report",
 
   // PUBLIC ROUTES

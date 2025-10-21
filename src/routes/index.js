@@ -31,6 +31,8 @@ import DsCase from "../pages/dashboard/profiles/deputySheriff/dsCases.jsx";
 import DsCaseDetails from "../pages/dashboard/profiles/deputySheriff/dsCaseDetails.jsx";
 import DsMotionCases from "../pages/dashboard/profiles/deputySheriff/dsMotionCases.jsx";
 import DsAdrCases from "../pages/dashboard/profiles/deputySheriff/dsAdrCases.jsx";
+import DsPostJudgement from "../pages/dashboard/profiles/deputySheriff/dsPostJudgement.jsx";
+import DsReport from "../pages/dashboard/profiles/deputySheriff/dsReport.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -152,6 +154,14 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.DS_ADR_CASES,
         element: <DsAdrCases />,
+      },
+      {
+        path: RoutePaths.DS_POST_JUDGEMENT,
+        element: <DsPostJudgement />,
+      },
+      {
+        path: RoutePaths.REPORT,
+        element: <DsReport />,
       },
     ],
   },
