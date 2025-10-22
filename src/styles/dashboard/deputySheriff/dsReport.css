@@ -1,0 +1,33 @@
+.ds_report_container {
+  max-width: 37.25rem;
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 4.687rem;
+  flex-direction: column;
+  display: flex;
+  gap: 2.7rem;
+  align-items: center;
+}
+.ds_report_title {
+  color: #000000;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.ds_report_form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ds_report_container {
+    margin-top: 2.5rem;
+    padding: 0 1rem;
+  }
+  .ds_report_title {
+    font-size: 1.25rem;
+  }
+}

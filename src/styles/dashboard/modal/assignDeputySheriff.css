@@ -72,6 +72,12 @@
     line-height: 20px;
   }
 }
+.container_assign_service_sheriff_background {
+  background-image: url("/src/assets/images/logo_bg.webp");
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: center;
+}
 
 @media (max-width: 480px) {
   .assign_deputy_modal_container {

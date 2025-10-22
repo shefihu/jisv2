@@ -124,7 +124,7 @@ const MyCases = () => {
     if (column.key === "details") {
       return (
         <button
-          className="action-button view-button"
+          className="action-button"
           onClick={() =>
             navigate(
               RoutePaths.MY_CASE.replace(

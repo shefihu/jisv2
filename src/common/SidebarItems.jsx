@@ -181,4 +181,36 @@ export const sidebarRoutesByRole = {
       path: RoutePaths.FIAT,
     },
   ],
+  deputySheriff: [
+    {
+      name: "Dashboard",
+      icon: <DashboardIcon />,
+      path: RoutePaths.DASHBOARD,
+    },
+    {
+      name: "DS Cases",
+      icon: <ACRIcon />,
+      path: RoutePaths.DS_CASES,
+    },
+    {
+      name: "DS Motion Cases",
+      icon: <ACRIcon />,
+      path: RoutePaths.DS_MOTION_CASES,
+    },
+    {
+      name: "DS ADR Cases",
+      icon: <ACRIcon />,
+      path: RoutePaths.DS_ADR_CASES,
+    },
+    {
+      name: "Post Judgement",
+      icon: <ACRIcon />,
+      path: RoutePaths.DS_POST_JUDGEMENT,
+    },
+    {
+      name: "Report",
+      icon: <ACRIcon />,
+      path: RoutePaths.REPORT,
+    },
+  ],
 };

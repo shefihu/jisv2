@@ -1,6 +1,7 @@
 import { CURRENT_USER_ROLE, USER_ROLES } from "../../config/roleConfig";
 import "../../styles/dashboard/home/index.css";
 import ChiefJudgeDashboard from "./profiles/chiefJudge/chiefJudgeDashboard";
+import DeputySheriffDashboard from "./profiles/deputySheriff/deputySheriffDashboard";
 import JudgeDashboard from "./profiles/judges/judgesDashboard";
 
 // Clerk Dashboard Component
@@ -123,6 +124,8 @@ const Home = () => {
         return <LawyerDashboard />;
       case USER_ROLES.ADMIN:
         return <AdminDashboard />;
+      case USER_ROLES.DEPUTY_SHERIFF:
+        return <DeputySheriffDashboard />;
       case USER_ROLES.PUBLIC:
         return <PublicDashboard />;
       default:

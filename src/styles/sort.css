@@ -1,6 +1,7 @@
 .sort_container {
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
 }
 .sort_button {
   padding: 0.5rem;
@@ -16,6 +17,11 @@
   position: relative;
   font-size: 0.626rem;
   width: fit-content;
+}
+
+.sort_button.active {
+  border-color: #5ca9f5;
+  color: #5ca9f5;
 }
 
 .sort_button span {
@@ -46,11 +52,12 @@
 }
 
 .sort_dropdown li {
-  padding: 0.65rem 1rem;
+  padding: 0.65rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-size: 0.75rem;
 }
 .sort_dropdown li:hover {
   background-color: #c8cace69;

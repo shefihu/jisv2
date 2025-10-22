@@ -27,6 +27,12 @@ import CaseAssignmentReport from "../pages/dashboard/profiles/chiefJudge/caseAss
 import AdrCaseAssignment from "../pages/dashboard/profiles/chiefJudge/adrCaseAssignment.jsx";
 import AssignMotionCases from "../pages/dashboard/profiles/chiefJudge/assignMotionCases.jsx";
 import ScheduleMotionCase from "../pages/dashboard/profiles/chiefJudge/scheduleMotionCases.jsx";
+import DsCase from "../pages/dashboard/profiles/deputySheriff/dsCases.jsx";
+import DsCaseDetails from "../pages/dashboard/profiles/deputySheriff/dsCaseDetails.jsx";
+import DsMotionCases from "../pages/dashboard/profiles/deputySheriff/dsMotionCases.jsx";
+import DsAdrCases from "../pages/dashboard/profiles/deputySheriff/dsAdrCases.jsx";
+import DsPostJudgement from "../pages/dashboard/profiles/deputySheriff/dsPostJudgement.jsx";
+import DsReport from "../pages/dashboard/profiles/deputySheriff/dsReport.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -132,6 +138,30 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.ASSIGN_MOTION_CASES,
         element: <AssignMotionCases />,
+      },
+      {
+        path: RoutePaths.DS_CASES,
+        element: <DsCase />,
+      },
+      {
+        path: RoutePaths.DS_CASE,
+        element: <DsCaseDetails />,
+      },
+      {
+        path: RoutePaths.DS_MOTION_CASES,
+        element: <DsMotionCases />,
+      },
+      {
+        path: RoutePaths.DS_ADR_CASES,
+        element: <DsAdrCases />,
+      },
+      {
+        path: RoutePaths.DS_POST_JUDGEMENT,
+        element: <DsPostJudgement />,
+      },
+      {
+        path: RoutePaths.REPORT,
+        element: <DsReport />,
       },
     ],
   },
