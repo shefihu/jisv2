@@ -5,7 +5,7 @@ export const USER_ROLES = {
   DEPUTY_SHERIFF: "deputySheriff",
 };
 
-export const CURRENT_USER_ROLE = USER_ROLES.DEPUTY_SHERIFF;
+export const CURRENT_USER_ROLE = USER_ROLES.ACR;
 
 export const ROLE_PERMISSIONS = {
   [USER_ROLES.JUDGE]: {

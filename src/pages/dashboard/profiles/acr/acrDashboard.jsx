@@ -1,4 +1,4 @@
-import "../../styles/dashboard/home/index.css";
+import "../../../../styles/dashboard/home/index.css";
 import MetricsCardContainer from "../../../../components/dashboard/home/MetricsCardContainer";
 import {
   caseCardData,

@@ -45,5 +45,5 @@
   font-style: normal;
 }
 body {
-  font-family: "Ezra", sans-serif;
+  font-family: "Ezra", sans-serif !important;
 }

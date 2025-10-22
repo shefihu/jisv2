@@ -16,6 +16,7 @@
   color: #5ca9fb;
   text-transform: capitalize;
   transition: all ease-in-out 0.5s;
+  font-family: "Ezra", sans-serif !important;
   flex-grow: 1;
   text-wrap: nowrap;
 }
